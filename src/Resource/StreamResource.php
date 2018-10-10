@@ -1,0 +1,21 @@
+<?php
+
+declare(strict_types = 1);
+
+namespace drupol\valuewrapper\Resource;
+
+/**
+ * Class StreamResource
+ */
+class StreamResource extends ResourceValue
+{
+    /**
+     * {@inheritdoc
+     */
+    public function hash(): string
+    {
+        $info = \implode('', \stream_get_meta_data($this->get()));
+
+        return $this->doHash(\get_resource_type($this->get()) . $info);
+    }
+}
