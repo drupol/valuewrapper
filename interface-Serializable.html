@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="resources/style.css">
 
         <title>
-            Interface drupol\valuewrapper\ValueInterface | ValueWrapper API documentation
+            Interface Serializable | ValueWrapper API documentation
         </title>
     </head>
 
@@ -72,15 +72,11 @@
 
 <ol class="breadcrumb pull-left">
         <li>
-            <a href="namespace-drupol.html">drupol</a>
-        </li>
-            <li class="backslash">\</li>
-        <li>
-            <a href="namespace-drupol.valuewrapper.html">valuewrapper</a>
+            <a href="namespace-.html"></a>
         </li>
 
         <li class="backslash">\</li>
-        <li class="active">ValueInterface</li>
+        <li class="active">Serializable</li>
 </ol>
                         </div>
                     </div>
@@ -90,22 +86,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-    <h1>ValueInterface</h1>
+    <h1>Serializable</h1>
 
-        <div class="panel panel-default">
-            <div class="panel-body">
-                Interface ValueInterface
-            </div>
-        </div>
 
-        <dl class="tree">
-            <dd>
-                implements
-                    <a href="interface-Serializable.html">Serializable</a>, 
-                    <a href="interface-drupol.valuewrapper.Contract.Equalable.html">drupol\valuewrapper\Contract\Equalable</a>, 
-                    <a href="interface-drupol.valuewrapper.Contract.Hashable.html">drupol\valuewrapper\Contract\Hashable</a>
-            </dd>
-        </dl>
 
         <div>
             <h2>Known implementers</h2>
@@ -154,12 +137,14 @@
                     </a>, 
                     <a href="class-drupol.valuewrapper.Type.TypeValue.html">
                         drupol\valuewrapper\Type\TypeValue
+                    </a>, 
+                    <a href="interface-drupol.valuewrapper.ValueInterface.html">
+                        drupol\valuewrapper\ValueInterface
                     </a>
             </p>
         </div>
 
     <div class="info">
-            <a href="source-interface-drupol.valuewrapper.ValueInterface.html" class="open-source-code">Open source code</a>
         <br>
     </div>
 
@@ -168,7 +153,7 @@
 
 
 
-<tr id="_get">
+<tr id="_serialize">
 
     <td class="attributes col-md-1">
         <code class="keyword">
@@ -179,11 +164,41 @@
 
     <td class="name">
         <div>
-            <a class="anchor pull-right" href="#_get">#</a>
-            <code><a href="source-interface-drupol.valuewrapper.ValueInterface.html#21">get</a>( )</code>
+            <a class="anchor pull-right" href="#_serialize">#</a>
+            <code><a href="source-interface-Serializable.html#5">serialize</a>( )</code>
 
             <div class="description">
-                Get the original value of the object.
+                
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_unserialize">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                
+                public
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_unserialize">#</a>
+            <code><a href="source-interface-Serializable.html#6">unserialize</a>( <span> <span class="property-name">$serialized</span> </span> )</code>
+
+            <div class="description">
+                
 
 
 
