@@ -29,7 +29,7 @@ $string = 'Hello world!';
 $value = ValueWrapper::create($string); // This creates a StringType object.
 
 $integer = 123;
-$value = ValueWrapper::create($string); // This creates an IntegerType object.
+$value = ValueWrapper::create($integer); // This creates an IntegerType object.
 
 $closure = function (string $who) {return 'Hello ' . $who;};
 $value = ValueWrapper::create($closure); // This creates a ClosureObject object.
