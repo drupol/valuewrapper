@@ -33,6 +33,13 @@ class ValueWrapper implements ValueWrapperInterface
         'Anonymous' => \drupol\valuewrapper\Object\AnonymousObject::class,
         'Closure' => \drupol\valuewrapper\Object\ClosureObject::class,
         'DateTime' => \drupol\valuewrapper\Object\DateTimeObject::class,
+        'Exception' => \drupol\valuewrapper\Object\Exception\ExceptionObject::class,
+        'Error' => \drupol\valuewrapper\Object\Exception\ErrorObject::class,
+        'TypeError' => \drupol\valuewrapper\Object\Exception\TypeErrorObject::class,
+        'ArithmeticError' => \drupol\valuewrapper\Object\Exception\ArithmeticErrorObject::class,
+        'AssertionError' => \drupol\valuewrapper\Object\Exception\AssertionErrorObject::class,
+        'DivisionByZeroError' => \drupol\valuewrapper\Object\Exception\DivisionByZeroErrorObject::class,
+        'ParseError' => \drupol\valuewrapper\Object\Exception\ParseErrorObject::class,
     ];
 
     /**
