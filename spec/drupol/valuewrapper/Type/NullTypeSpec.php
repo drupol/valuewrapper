@@ -63,4 +63,11 @@ class NullTypeSpec extends ObjectBehavior
             ->get()
             ->shouldReturn(null);
     }
+
+    public function it_can_be_printed()
+    {
+        $this
+            ->__toString()
+            ->shouldReturn('');
+    }
 }

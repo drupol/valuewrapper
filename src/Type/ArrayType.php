@@ -30,4 +30,12 @@ class ArrayType extends TypeValue
 
         throw new \Exception('Unable to encode the value.');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function __toString(): string
+    {
+        throw new \BadMethodCallException('Unable to convert an array to string.');
+    }
 }
