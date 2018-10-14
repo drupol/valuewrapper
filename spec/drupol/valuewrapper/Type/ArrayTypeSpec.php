@@ -58,4 +58,11 @@ class ArrayTypeSpec extends ObjectBehavior
             ->get()
             ->shouldReturn(str_split('hello'));
     }
+
+    public function it_can_be_printed()
+    {
+        $this
+            ->shouldThrow('\BadMethodCallException')
+            ->during('__toString');
+    }
 }

@@ -30,4 +30,12 @@ class BooleanType extends TypeValue
 
         return $this->doHash($this->getType() . $value . $this->get());
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function __toString(): string
+    {
+        throw new \BadMethodCallException('Unable to convert a boolean to string.');
+    }
 }

@@ -86,4 +86,11 @@ class StringTypeSpec extends ObjectBehavior
             ->get()
             ->shouldReturn('string');
     }
+
+    public function it_can_be_printed()
+    {
+        $this
+            ->__toString()
+            ->shouldReturn('string');
+    }
 }

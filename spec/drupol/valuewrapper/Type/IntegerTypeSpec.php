@@ -61,4 +61,11 @@ class IntegerTypeSpec extends ObjectBehavior
             ->get()
             ->shouldReturn(7);
     }
+
+    public function it_can_be_printed()
+    {
+        $this
+            ->__toString()
+            ->shouldReturn('7');
+    }
 }

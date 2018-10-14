@@ -61,4 +61,11 @@ class DoubleTypeSpec extends ObjectBehavior
             ->get()
             ->shouldReturn(3.1415);
     }
+
+    public function it_can_be_printed()
+    {
+        $this
+            ->__toString()
+            ->shouldReturn('3.1415');
+    }
 }
