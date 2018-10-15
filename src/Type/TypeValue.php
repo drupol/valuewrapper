@@ -5,14 +5,12 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper\Type;
 
 use drupol\valuewrapper\AbstractValue;
-use drupol\valuewrapper\Contract\Stringable;
-use drupol\valuewrapper\Contract\Arrayable;
 use drupol\valuewrapper\ValueInterface;
 
 /**
  * Class TypeValue
  */
-abstract class TypeValue extends AbstractValue implements Stringable, Arrayable
+abstract class TypeValue extends AbstractValue implements TypeValueInterface
 {
     /**
      * {@inheritdoc}
@@ -25,7 +23,7 @@ abstract class TypeValue extends AbstractValue implements Stringable, Arrayable
     /**
      * {@inheritdoc}
      */
-    public function type()
+    public function type() : string
     {
         return \gettype($this->value());
     }

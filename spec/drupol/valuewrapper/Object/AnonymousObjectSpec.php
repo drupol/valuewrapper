@@ -46,4 +46,18 @@ class AnonymousObjectSpec extends ObjectBehavior
             ->shouldThrow('\Exception')
             ->during('hash');
     }
+
+    public function it_can_serialize()
+    {
+        $this
+            ->shouldThrow('\Exception')
+            ->during('serialize');
+    }
+
+    public function it_can_unserialize()
+    {
+        $this
+            ->shouldThrow('\Exception')
+            ->during('unserialize', ['foo']);
+    }
 }

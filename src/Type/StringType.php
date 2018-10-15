@@ -22,7 +22,8 @@ class StringType extends TypeValue
     /**
      * {@inheritdoc}
      */
-    public function __toArray(): array {
+    public function __toArray(): array
+    {
         return str_split($this->value());
     }
 }

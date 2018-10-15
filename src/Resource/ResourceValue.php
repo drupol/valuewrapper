@@ -10,7 +10,7 @@ use drupol\valuewrapper\ValueInterface;
 /**
  * Class ResourceValue
  */
-abstract class ResourceValue extends AbstractValue
+abstract class ResourceValue extends AbstractValue implements ResourceValueInterface
 {
     /**
      * ResourceValue constructor.
@@ -56,5 +56,13 @@ abstract class ResourceValue extends AbstractValue
     public function unserialize($serialized)
     {
         throw new \ErrorException('Unsupported method.');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function type(): string
+    {
+        return \get_resource_type($this->value());
     }
 }

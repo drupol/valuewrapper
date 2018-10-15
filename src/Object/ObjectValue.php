@@ -11,7 +11,7 @@ use drupol\valuewrapper\ValueInterface;
 /**
  * Class ObjectValue
  */
-abstract class ObjectValue extends AbstractValue
+abstract class ObjectValue extends AbstractValue implements ObjectValueInterface
 {
     /**
      * {@inheritdoc}
@@ -31,5 +31,21 @@ abstract class ObjectValue extends AbstractValue
     public function equals(ValueInterface $item, $strict = true): bool
     {
         return $this->hash() == $item->hash();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function class(): string
+    {
+        return \get_class($this->value());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function type(): string
+    {
+        return 'object';
     }
 }

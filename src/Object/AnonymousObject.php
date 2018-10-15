@@ -26,14 +26,16 @@ class AnonymousObject extends ObjectValue
     /**
      * {@inheritdoc}
      */
-    public function serialize() {
+    public function serialize()
+    {
         throw new \BadMethodCallException('Unable to serialize this class.');
     }
 
     /**
      * {@inheritdoc}
      */
-    public function unserialize($serialized) {
+    public function unserialize($serialized)
+    {
         throw new \BadMethodCallException('Unable to unserialize this class.');
     }
 }
