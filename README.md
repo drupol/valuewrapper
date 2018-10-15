@@ -11,7 +11,11 @@
 
 ## Description
 
-This simple library allows you to wrap any kind of PHP variable in a strict typed PHP object.
+This library allows you to wrap PHP variable in a strict typed PHP object.
+
+## Documentation
+
+API documentation is automatically generated with [APIGen](https://github.com/ApiGen/ApiGen) and available at [this address](https://not-a-number.io/valuewrapper/).
 
 ## Requirements
 
@@ -47,9 +51,10 @@ $value->equals($sameValue); // Return true.
 
 ## Code quality and tests
 
-Every time changes are introduced into the library, [Travis CI](https://travis-ci.org/drupol/valuewrapper/builds) run the tests and the benchmarks.
+Every time changes are introduced into the library, [Travis CI](https://travis-ci.org/drupol/valuewrapper/builds) run the tests.
 
 The library has tests written with [PHPSpec](http://www.phpspec.net/).
+
 Feel free to check them out in the `spec` directory. Run `composer phpspec` to trigger the tests.
 
 [PHPInfection](https://github.com/infection/infection) is used to ensure that your code is properly tested, run `composer infection` to test your code.
