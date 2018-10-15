@@ -68,4 +68,11 @@ class IntegerTypeSpec extends ObjectBehavior
             ->__toString()
             ->shouldReturn('7');
     }
+
+    public function it_can_be_casted_as_an_array()
+    {
+        $this
+            ->__toArray()
+            ->shouldReturn([7]);
+    }
 }

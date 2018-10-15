@@ -18,4 +18,11 @@ class StringType extends TypeValue
     {
         parent::__construct($value);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function __toArray(): array {
+        return str_split($this->value());
+    }
 }

@@ -68,4 +68,11 @@ class DoubleTypeSpec extends ObjectBehavior
             ->__toString()
             ->shouldReturn('3.1415');
     }
+
+    public function it_can_be_casted_as_an_array()
+    {
+        $this
+            ->__toArray()
+            ->shouldReturn([3.1415]);
+    }
 }

@@ -70,4 +70,11 @@ class NullTypeSpec extends ObjectBehavior
             ->__toString()
             ->shouldReturn('');
     }
+
+    public function it_can_be_casted_as_an_array()
+    {
+        $this
+            ->__toArray()
+            ->shouldReturn([]);
+    }
 }

@@ -6,12 +6,13 @@ namespace drupol\valuewrapper\Type;
 
 use drupol\valuewrapper\AbstractValue;
 use drupol\valuewrapper\Contract\Stringable;
+use drupol\valuewrapper\Contract\Arrayable;
 use drupol\valuewrapper\ValueInterface;
 
 /**
  * Class TypeValue
  */
-abstract class TypeValue extends AbstractValue implements Stringable
+abstract class TypeValue extends AbstractValue implements Stringable, Arrayable
 {
     /**
      * {@inheritdoc}
@@ -65,5 +66,13 @@ abstract class TypeValue extends AbstractValue implements Stringable
     public function __toString(): string
     {
         return (string) $this->value();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function __toArray(): array
+    {
+        return (array) $this->value();
     }
 }

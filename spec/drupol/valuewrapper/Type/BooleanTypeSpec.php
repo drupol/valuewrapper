@@ -68,4 +68,11 @@ class BooleanTypeSpec extends ObjectBehavior
             ->shouldThrow('\BadMethodCallException')
             ->during('__toString');
     }
+
+    public function it_can_be_casted_as_an_array()
+    {
+        $this
+            ->__toArray()
+            ->shouldReturn([true]);
+    }
 }
