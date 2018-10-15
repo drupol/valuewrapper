@@ -22,4 +22,18 @@ class AnonymousObject extends ObjectValue
 
         throw new \Exception('The anonymous class must implement Hashable interface.');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serialize() {
+        throw new \BadMethodCallException('Unable to serialize this class.');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function unserialize($serialized) {
+        throw new \BadMethodCallException('Unable to unserialize this class.');
+    }
 }

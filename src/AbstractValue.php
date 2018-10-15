@@ -40,15 +40,9 @@ abstract class AbstractValue implements ValueInterface
         return $this->value();
     }
 
-    public function serialize()
-    {
-        // TODO: Implement serialize() method.
-    }
+    abstract public function serialize();
 
-    public function unserialize($serialized)
-    {
-        // TODO: Implement unserialize() method.
-    }
+    abstract public function unserialize($serialized);
 
     /**
      * @param string $string
