@@ -4,7 +4,6 @@
  [![Build status](https://ci.appveyor.com/api/projects/status/grvr1tfq9uoth0rg?svg=true)](https://ci.appveyor.com/project/drupol/valuewrapper)
  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/drupol/valuewrapper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/drupol/valuewrapper/?branch=master)
  [![Code Coverage](https://scrutinizer-ci.com/g/drupol/valuewrapper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/drupol/valuewrapper/?branch=master)
- [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c6d73735f2c34df5a5dfc30129493337)](https://www.codacy.com/app/drupol/valuewrapper)
  [![Mutation testing badge](https://badge.stryker-mutator.io/github.com/drupol/valuewrapper/master)](https://stryker-mutator.github.io)
  [![License](https://poser.pugx.org/drupol/valuewrapper/license)](https://packagist.org/packages/drupol/valuewrapper)
 

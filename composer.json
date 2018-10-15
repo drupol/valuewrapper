@@ -10,7 +10,6 @@
     },
     "require-dev": {
         "apigen/apigen": "dev-master",
-        "codacy/coverage": "^1.4",
         "drupol/phpspec-annotation": "^1.0",
         "friendsofphp/php-cs-fixer": "^2.10",
         "infection/infection": "^0.10.5",
@@ -60,7 +59,6 @@
         "phpcs": "./vendor/bin/phpcs --ignore=vendor .",
         "phpcbf": "./vendor/bin/phpcbf --ignore=vendor .",
         "infection": "./vendor/bin/infection run -j 10",
-        "codacy": "./vendor/bin/codacycoverage clover build/logs/clover.xml",
         "scrutinizer": "./vendor/bin/ocular code-coverage:upload --format=php-clover build/logs/clover.xml",
         "bench": "./vendor/bin/phpbench run --report=project --store --precision=3"
     }
