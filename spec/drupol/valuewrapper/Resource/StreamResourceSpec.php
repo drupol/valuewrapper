@@ -11,7 +11,10 @@ class StreamResourceSpec extends ObjectBehavior
 {
     public function let()
     {
-        $resource = fopen(sys_get_temp_dir(). '/tmp.txt', 'w');
+        if (!file_exists('build')) {
+            mkdir('build');
+        }
+        $resource = fopen('build/delete-me.txt', 'w');
 
         $this->beConstructedWith($resource);
     }
@@ -32,12 +35,12 @@ class StreamResourceSpec extends ObjectBehavior
     {
         $this
             ->hash()
-            ->shouldReturn('5df455f91ed7512acae022110d62e0885ea63eb9');
+            ->shouldReturn('deac58c179089c7b481bf69219a8d9348b8062bb');
     }
 
     public function it_can_equals()
     {
-        $res = fopen(sys_get_temp_dir(). '/tmp.txt', 'w');
+        $res = fopen('build/delete-me.txt', 'w');
 
         $resource = ValueWrapper::create($res);
 
