@@ -21,5 +21,5 @@ interface Equalable
      * @return bool
      *   The object's hash.
      */
-    public function equals(ValueInterface $item, $strict = true) : bool;
+    public function equals(ValueInterface $item, bool $strict = true) : bool;
 }

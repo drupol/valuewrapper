@@ -17,7 +17,7 @@ class AnonymousObject extends ObjectValue
     public function hash(): string
     {
         if ($this->value() instanceof Hashable) {
-            return $this->doHash($this->value()->hash());
+            return $this->doHash($this->type() . $this->value()->hash());
         }
 
         throw new \Exception('The anonymous class must implement Hashable interface.');

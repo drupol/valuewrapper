@@ -26,7 +26,7 @@ class BooleanTypeSpec extends ObjectBehavior
     {
         $this
             ->hash()
-            ->shouldReturn('cda865d251ad7a4f5b75c268bbe053ea3495fedf');
+            ->shouldReturn('281ba5365fc65c7ea47c3b306a292f9518c1cc70');
     }
 
     public function it_can_get_the_type()

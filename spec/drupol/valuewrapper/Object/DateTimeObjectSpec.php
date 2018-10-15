@@ -27,7 +27,7 @@ class DateTimeObjectSpec extends ObjectBehavior
     {
         $this
             ->hash()
-            ->shouldReturn('7f42e0398bee178e68381b887a7954cda7a833a1');
+            ->shouldReturn('c4e56bd30a940aaea1e9c0e5f848a04c33743764');
     }
 
     public function it_can_serialize()
@@ -47,5 +47,12 @@ class DateTimeObjectSpec extends ObjectBehavior
         $this
             ->equals($date)
             ->shouldReturn(true);
+    }
+
+    public function it_can_get_its_class()
+    {
+        $this
+            ->class()
+            ->shouldReturn('DateTime');
     }
 }

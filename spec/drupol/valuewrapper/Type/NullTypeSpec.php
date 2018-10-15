@@ -31,7 +31,7 @@ class NullTypeSpec extends ObjectBehavior
     {
         $this
             ->hash()
-            ->shouldReturn('eef19c54306daa69eda49c0272623bdb5e2b341f');
+            ->shouldReturn('ecf36257fd02e5d2e9d4366eb3da05a1947a75e1');
     }
 
     public function it_cannot_work_with_another_type_of_value()

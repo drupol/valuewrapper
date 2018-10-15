@@ -35,7 +35,7 @@ class ClosureObject extends ObjectValue
      */
     public function hash(): string
     {
-        return $this->doHash($this->serializer->serialize($this->value()));
+        return $this->doHash($this->type() . $this->serializer->serialize($this->value()));
     }
 
     /**

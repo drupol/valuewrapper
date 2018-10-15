@@ -4,8 +4,6 @@ declare(strict_types = 1);
 
 namespace drupol\valuewrapper\Contract;
 
-use drupol\valuewrapper\ValueInterface;
-
 /**
  * Interface Stringable
  */

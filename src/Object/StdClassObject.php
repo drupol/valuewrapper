@@ -24,4 +24,12 @@ class StdClassObject extends ObjectValue
     {
         throw new \BadMethodCallException('Unable to unserialize this class.');
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function hash(): string
+    {
+        throw new \BadMethodCallException('Unable to hash this class.');
+    }
 }

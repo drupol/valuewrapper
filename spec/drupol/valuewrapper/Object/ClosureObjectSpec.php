@@ -29,7 +29,7 @@ class ClosureObjectSpec extends ObjectBehavior
     {
         $this
             ->hash()
-            ->shouldReturn('cb69f106128fc1797b55a876e806f07444bb1546');
+            ->shouldReturn('8c82b11950d36a2e42bdde11ab2082b2d89f37b9');
     }
 
     public function it_can_be_invoked()
@@ -73,5 +73,12 @@ class ClosureObjectSpec extends ObjectBehavior
 
         $this('closure')
             ->shouldReturn('hello closure');
+    }
+
+    public function it_can_get_its_class()
+    {
+        $this
+            ->class()
+            ->shouldReturn('Closure');
     }
 }

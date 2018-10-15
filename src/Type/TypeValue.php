@@ -17,7 +17,15 @@ abstract class TypeValue extends AbstractValue implements TypeValueInterface
      */
     public function hash(): string
     {
-        return $this->doHash($this->type() . $this->value());
+        return $this->doHash(var_export($this->value(), true));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doHash(string $string) : string
+    {
+        return parent::doHash($this->type() . $string);
     }
 
     /**
@@ -31,7 +39,7 @@ abstract class TypeValue extends AbstractValue implements TypeValueInterface
     /**
      * {@inheritdoc}
      */
-    public function equals(ValueInterface $item, $strict = true) : bool
+    public function equals(ValueInterface $item, bool $strict = true) : bool
     {
         return ($strict === true) ?
             $this === $item:

@@ -32,7 +32,7 @@ class AnonymousObjectSpec extends ObjectBehavior
     {
         $this
             ->hash()
-            ->shouldReturn('aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d');
+            ->shouldReturn('f3c9bf4c389b5b7205b331449efdfcbb254c95c6');
     }
 
     public function it_can_throw_an_exception_when_not_hashable()
@@ -50,14 +50,21 @@ class AnonymousObjectSpec extends ObjectBehavior
     public function it_can_serialize()
     {
         $this
-            ->shouldThrow('\Exception')
+            ->shouldThrow('\BadMethodCallException')
             ->during('serialize');
     }
 
     public function it_can_unserialize()
     {
         $this
-            ->shouldThrow('\Exception')
+            ->shouldThrow('\BadMethodCallException')
             ->during('unserialize', ['foo']);
+    }
+
+    public function it_can_get_its_class()
+    {
+        $this
+            ->class()
+            ->shouldStartWith('class@anonymous');
     }
 }

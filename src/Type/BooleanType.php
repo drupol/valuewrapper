@@ -22,18 +22,6 @@ class BooleanType extends TypeValue
     /**
      * {@inheritdoc}
      */
-    public function hash(): string
-    {
-        $value = true === $this->value() ?
-            'true':
-            'false';
-
-        return $this->doHash($this->type() . $value . $this->value());
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function __toString(): string
     {
         throw new \BadMethodCallException('Unable to convert a boolean to string.');

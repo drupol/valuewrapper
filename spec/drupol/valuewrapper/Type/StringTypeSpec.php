@@ -32,7 +32,7 @@ class StringTypeSpec extends ObjectBehavior
     {
         $this
             ->hash()
-            ->shouldReturn('9d382b7fb7cbdd7f2b71d1604ab77a35798772fb');
+            ->shouldReturn('3fb24b0ca1407bb0f890221d1303c1a043423d67');
     }
 
     public function it_can_throw_an_exception_when_unable_to_encode_to_json()

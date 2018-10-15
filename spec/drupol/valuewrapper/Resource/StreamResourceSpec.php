@@ -11,7 +11,7 @@ class StreamResourceSpec extends ObjectBehavior
 {
     public function let()
     {
-        $resource = fopen('tmp.txt', 'w');
+        $resource = fopen(sys_get_temp_dir(). '/tmp.txt', 'w');
 
         $this->beConstructedWith($resource);
     }
@@ -32,12 +32,12 @@ class StreamResourceSpec extends ObjectBehavior
     {
         $this
             ->hash()
-            ->shouldReturn('9f4aef28f9292c1cda94479b33105cc0a0d57c96');
+            ->shouldReturn('5df455f91ed7512acae022110d62e0885ea63eb9');
     }
 
     public function it_can_equals()
     {
-        $res = fopen('tmp.txt', 'w');
+        $res = fopen(sys_get_temp_dir(). '/tmp.txt', 'w');
 
         $resource = ValueWrapper::create($res);
 

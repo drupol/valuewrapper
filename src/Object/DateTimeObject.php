@@ -24,7 +24,7 @@ class DateTimeObject extends ObjectValue
      */
     public function hash(): string
     {
-        return $this->doHash((string) $this->value()->getTimestamp());
+        return $this->doHash($this->type() . $this->class() . (string) $this->value()->getTimestamp());
     }
 
     /**

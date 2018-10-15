@@ -23,14 +23,28 @@ class StdClassObjectSpec extends ObjectBehavior
     public function it_can_serialize()
     {
         $this
-            ->shouldThrow('\Exception')
+            ->shouldThrow('\BadMethodCallException')
             ->during('serialize');
     }
 
     public function it_can_unserialize()
     {
         $this
-            ->shouldThrow('\Exception')
+            ->shouldThrow('\BadMethodCallException')
             ->during('unserialize', ['foo']);
+    }
+
+    public function it_can_get_its_class()
+    {
+        $this
+            ->class()
+            ->shouldReturn('stdClass');
+    }
+
+    public function it_can_hash()
+    {
+        $this
+            ->shouldThrow('\BadMethodCallException')
+            ->during('hash');
     }
 }

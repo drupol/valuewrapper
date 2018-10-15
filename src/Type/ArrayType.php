@@ -25,7 +25,7 @@ class ArrayType extends TypeValue
     public function hash(): string
     {
         if ($string = \json_encode($this->value())) {
-            return $this->doHash($this->type() . $string);
+            return $this->doHash($string);
         }
 
         throw new \Exception('Unable to encode the value.');
