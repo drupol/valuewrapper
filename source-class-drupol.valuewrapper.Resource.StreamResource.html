@@ -82,9 +82,9 @@
 </span></span><span class="l" id="line-14"><span class="php-comment">     */</span>
 </span><span class="l" id="line-15">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">hash</span>(): string
 </span><span class="l" id="line-16">    {
-</span><span class="l" id="line-17">        <span class="php-var">$info</span> = \<span class="php-keyword2">implode</span>(<span class="php-quote">''</span>, \<span class="php-keyword2">stream_get_meta_data</span>(<span class="php-var">$this</span>-&gt;get()));
+</span><span class="l" id="line-17">        <span class="php-var">$info</span> = \<span class="php-keyword2">implode</span>(<span class="php-quote">''</span>, \<span class="php-keyword2">stream_get_meta_data</span>(<span class="php-var">$this</span>-&gt;value()));
 </span><span class="l" id="line-18">
-</span><span class="l" id="line-19">        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;doHash(\<span class="php-keyword2">get_resource_type</span>(<span class="php-var">$this</span>-&gt;get()) . <span class="php-var">$info</span>);
+</span><span class="l" id="line-19">        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;doHash(\<span class="php-keyword2">get_resource_type</span>(<span class="php-var">$this</span>-&gt;value()) . <span class="php-var">$info</span>);
 </span><span class="l" id="line-20">    }
 </span><span class="l" id="line-21">}
 </span><span class="l" id="line-22"></span><br></code></pre>
