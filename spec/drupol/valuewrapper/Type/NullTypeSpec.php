@@ -23,7 +23,7 @@ class NullTypeSpec extends ObjectBehavior
     public function it_can_use_get()
     {
         $this
-            ->get()
+            ->value()
             ->shouldBeNull();
     }
 
@@ -44,7 +44,7 @@ class NullTypeSpec extends ObjectBehavior
     public function it_can_get_the_type()
     {
         $this
-            ->getType()
+            ->type()
             ->shouldReturn('NULL');
     }
 
@@ -60,7 +60,7 @@ class NullTypeSpec extends ObjectBehavior
         $this
             ->unserialize('a:1:{s:5:"value";N;}');
         $this
-            ->get()
+            ->value()
             ->shouldReturn(null);
     }
 

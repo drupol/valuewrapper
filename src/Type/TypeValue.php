@@ -18,15 +18,15 @@ abstract class TypeValue extends AbstractValue implements Stringable
      */
     public function hash(): string
     {
-        return $this->doHash($this->getType() . $this->get());
+        return $this->doHash($this->type() . $this->value());
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getType()
+    public function type()
     {
-        return \gettype($this->get());
+        return \gettype($this->value());
     }
 
     /**
@@ -45,7 +45,7 @@ abstract class TypeValue extends AbstractValue implements Stringable
     public function serialize()
     {
         return \serialize([
-            'value' => $this->get(),
+            'value' => $this->value(),
         ]);
     }
 
@@ -64,6 +64,6 @@ abstract class TypeValue extends AbstractValue implements Stringable
      */
     public function __toString(): string
     {
-        return (string) $this->get();
+        return (string) $this->value();
     }
 }

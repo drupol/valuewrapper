@@ -27,7 +27,7 @@ abstract class AbstractValue implements ValueInterface
     /**
      * {@inheritdoc}
      */
-    public function get()
+    public function value()
     {
         return $this->value;
     }
@@ -37,7 +37,7 @@ abstract class AbstractValue implements ValueInterface
      */
     public function __invoke()
     {
-        return $this->get();
+        return $this->value();
     }
 
     public function serialize()

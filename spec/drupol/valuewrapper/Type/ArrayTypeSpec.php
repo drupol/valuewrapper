@@ -39,7 +39,7 @@ class ArrayTypeSpec extends ObjectBehavior
     public function it_can_get_the_type()
     {
         $this
-            ->getType()
+            ->type()
             ->shouldReturn('array');
     }
 
@@ -55,7 +55,7 @@ class ArrayTypeSpec extends ObjectBehavior
         $this
             ->unserialize('a:1:{s:5:"value";a:5:{i:0;s:1:"h";i:1;s:1:"e";i:2;s:1:"l";i:3;s:1:"l";i:4;s:1:"o";}}');
         $this
-            ->get()
+            ->value()
             ->shouldReturn(str_split('hello'));
     }
 

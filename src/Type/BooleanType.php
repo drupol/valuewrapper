@@ -24,11 +24,11 @@ class BooleanType extends TypeValue
      */
     public function hash(): string
     {
-        $value = true === $this->get() ?
+        $value = true === $this->value() ?
             'true':
             'false';
 
-        return $this->doHash($this->getType() . $value . $this->get());
+        return $this->doHash($this->type() . $value . $this->value());
     }
 
     /**

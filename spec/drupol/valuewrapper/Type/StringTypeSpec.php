@@ -24,7 +24,7 @@ class StringTypeSpec extends ObjectBehavior
     public function it_can_use_get()
     {
         $this
-            ->get()
+            ->value()
             ->shouldReturn('string');
     }
 
@@ -45,7 +45,7 @@ class StringTypeSpec extends ObjectBehavior
     public function it_can_get_the_type()
     {
         $this
-            ->getType()
+            ->type()
             ->shouldReturn('string');
     }
 
@@ -83,7 +83,7 @@ class StringTypeSpec extends ObjectBehavior
         $this
             ->unserialize('a:1:{s:5:"value";s:6:"string";}');
         $this
-            ->get()
+            ->value()
             ->shouldReturn('string');
     }
 

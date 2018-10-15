@@ -35,7 +35,7 @@ class ClosureObject extends ObjectValue
      */
     public function hash(): string
     {
-        return $this->doHash($this->serializer->serialize($this->get()));
+        return $this->doHash($this->serializer->serialize($this->value()));
     }
 
     /**
@@ -43,7 +43,7 @@ class ClosureObject extends ObjectValue
      */
     public function __invoke()
     {
-        return \call_user_func_array($this->get(), \func_get_args());
+        return \call_user_func_array($this->value(), \func_get_args());
     }
 
     /**
@@ -52,7 +52,7 @@ class ClosureObject extends ObjectValue
     public function serialize()
     {
         return \serialize([
-            'value' => base64_encode($this->serializer->serialize($this->get())),
+            'value' => base64_encode($this->serializer->serialize($this->value())),
         ]);
     }
 

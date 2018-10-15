@@ -21,7 +21,7 @@ class DoubleTypeSpec extends ObjectBehavior
     public function it_can_use_get()
     {
         $this
-            ->get()
+            ->value()
             ->shouldReturn(3.1415);
     }
 
@@ -42,7 +42,7 @@ class DoubleTypeSpec extends ObjectBehavior
     public function it_can_get_the_type()
     {
         $this
-            ->getType()
+            ->type()
             ->shouldReturn('double');
     }
 
@@ -58,7 +58,7 @@ class DoubleTypeSpec extends ObjectBehavior
         $this
             ->unserialize('a:1:{s:5:"value";d:3.1415;}');
         $this
-            ->get()
+            ->value()
             ->shouldReturn(3.1415);
     }
 

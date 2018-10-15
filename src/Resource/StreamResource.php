@@ -14,8 +14,8 @@ class StreamResource extends ResourceValue
      */
     public function hash(): string
     {
-        $info = \implode('', \stream_get_meta_data($this->get()));
+        $info = \implode('', \stream_get_meta_data($this->value()));
 
-        return $this->doHash(\get_resource_type($this->get()) . $info);
+        return $this->doHash(\get_resource_type($this->value()) . $info);
     }
 }

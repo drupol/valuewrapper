@@ -32,7 +32,7 @@ class BooleanTypeSpec extends ObjectBehavior
     public function it_can_get_the_type()
     {
         $this
-            ->getType()
+            ->type()
             ->shouldReturn('boolean');
     }
 
@@ -58,7 +58,7 @@ class BooleanTypeSpec extends ObjectBehavior
         $this
             ->unserialize('a:1:{s:5:"value";b:1;}');
         $this
-            ->get()
+            ->value()
             ->shouldReturn(true);
     }
 

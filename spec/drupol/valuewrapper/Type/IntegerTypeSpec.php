@@ -21,7 +21,7 @@ class IntegerTypeSpec extends ObjectBehavior
     public function it_can_use_get()
     {
         $this
-            ->get()
+            ->value()
             ->shouldReturn(7);
     }
 
@@ -42,7 +42,7 @@ class IntegerTypeSpec extends ObjectBehavior
     public function it_can_get_the_type()
     {
         $this
-            ->getType()
+            ->type()
             ->shouldReturn('integer');
     }
 
@@ -58,7 +58,7 @@ class IntegerTypeSpec extends ObjectBehavior
         $this
             ->unserialize('a:1:{s:5:"value";i:7;}');
         $this
-            ->get()
+            ->value()
             ->shouldReturn(7);
     }
 

@@ -24,7 +24,7 @@ class DateTimeObject extends ObjectValue
      */
     public function hash(): string
     {
-        return $this->doHash((string) $this->get()->getTimestamp());
+        return $this->doHash((string) $this->value()->getTimestamp());
     }
 
     /**
@@ -33,7 +33,7 @@ class DateTimeObject extends ObjectValue
     public function serialize()
     {
         return \serialize([
-            'value' => $this->get()->getTimestamp(),
+            'value' => $this->value()->getTimestamp(),
         ]);
     }
 

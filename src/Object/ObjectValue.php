@@ -18,11 +18,11 @@ abstract class ObjectValue extends AbstractValue
      */
     public function hash(): string
     {
-        if ($this->get() instanceof Hashable) {
-            return $this->doHash(\gettype($this->get()) . \get_class($this->get()) . $this->get()->hash());
+        if ($this->value() instanceof Hashable) {
+            return $this->doHash(\gettype($this->value()) . \get_class($this->value()) . $this->value()->hash());
         }
 
-        return $this->doHash(\gettype($this->get()) . \get_class($this->get()) . \spl_object_hash($this->get()));
+        return $this->doHash(\gettype($this->value()) . \get_class($this->value()) . \spl_object_hash($this->value()));
     }
 
     /**

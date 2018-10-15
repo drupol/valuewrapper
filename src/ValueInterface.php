@@ -18,5 +18,5 @@ interface ValueInterface extends Hashable, Equalable, \Serializable
      * @return mixed
      *   The original value.
      */
-    public function get();
+    public function value();
 }
