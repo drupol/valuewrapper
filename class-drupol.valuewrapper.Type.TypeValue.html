@@ -110,11 +110,26 @@
                     </a>
 
                     implements
+                        <a href="interface-Serializable.html">
+                            Serializable
+                        </a>, 
                         <a href="interface-drupol.valuewrapper.Contract.Arrayable.html">
                             drupol\valuewrapper\Contract\Arrayable
                         </a>, 
+                        <a href="interface-drupol.valuewrapper.Contract.Equalable.html">
+                            drupol\valuewrapper\Contract\Equalable
+                        </a>, 
+                        <a href="interface-drupol.valuewrapper.Contract.Hashable.html">
+                            drupol\valuewrapper\Contract\Hashable
+                        </a>, 
                         <a href="interface-drupol.valuewrapper.Contract.Stringable.html">
                             drupol\valuewrapper\Contract\Stringable
+                        </a>, 
+                        <a href="interface-drupol.valuewrapper.Type.TypeValueInterface.html">
+                            drupol\valuewrapper\Type\TypeValueInterface
+                        </a>, 
+                        <a href="interface-drupol.valuewrapper.ValueInterface.html">
+                            drupol\valuewrapper\ValueInterface
                         </a>
 
             </dd>
@@ -156,7 +171,7 @@
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_hash">#</a>
-            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#20-23">hash</a>( )</code>
+            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#18-21">hash</a>( )</code>
 
             <div class="description">
                 {@inheritdoc}
@@ -168,6 +183,14 @@
 
 
 
+                        <h2>Implementation of</h2>
+                        <div>
+                            <code>
+                                <a href="interface-drupol.valuewrapper.Contract.Hashable.html#_hash">
+                                    drupol\valuewrapper\Contract\Hashable::hash()
+                                </a>
+                            </code>
+                        </div>
             </div>
         </div>
     </td>
@@ -188,7 +211,7 @@
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_type">#</a>
-            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#28-31">type</a>( )</code>
+            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#26-29">type</a>( )</code>
 
             <div class="description">
                 {@inheritdoc}
@@ -200,6 +223,14 @@
 
 
 
+                        <h2>Implementation of</h2>
+                        <div>
+                            <code>
+                                <a href="interface-drupol.valuewrapper.Type.TypeValueInterface.html#_type">
+                                    drupol\valuewrapper\Type\TypeValueInterface::type()
+                                </a>
+                            </code>
+                        </div>
             </div>
         </div>
     </td>
@@ -220,7 +251,7 @@
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_equals">#</a>
-            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#36-41">equals</a>( <span> <a href="interface-drupol.valuewrapper.ValueInterface.html">drupol\valuewrapper\ValueInterface</a> <span class="property-name">$item</span> </span>, <span> <span class="property-name">$strict</span> = <span class="php-keyword1">true</span></span> )</code>
+            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#34-39">equals</a>( <span> <a href="interface-drupol.valuewrapper.ValueInterface.html">drupol\valuewrapper\ValueInterface</a> <span class="property-name">$item</span> </span>, <span> <span class="property-name">$strict</span> = <span class="php-keyword1">true</span></span> )</code>
 
             <div class="description">
                 {@inheritdoc}
@@ -232,6 +263,14 @@
 
 
 
+                        <h2>Implementation of</h2>
+                        <div>
+                            <code>
+                                <a href="interface-drupol.valuewrapper.Contract.Equalable.html#_equals">
+                                    drupol\valuewrapper\Contract\Equalable::equals()
+                                </a>
+                            </code>
+                        </div>
             </div>
         </div>
     </td>
@@ -252,7 +291,7 @@
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_serialize">#</a>
-            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#46-51">serialize</a>( )</code>
+            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#44-49">serialize</a>( )</code>
 
             <div class="description">
                 {@inheritdoc}
@@ -263,15 +302,15 @@
 
 
 
-                        <h2>Overrides</h2>
+
+                        <h2>Implementation of</h2>
                         <div>
                             <code>
-                                <a href="class-drupol.valuewrapper.AbstractValue.html#_serialize">
-                                    drupol\valuewrapper\AbstractValue::serialize()
+                                <a href="interface-Serializable.html#_serialize">
+                                    Serializable::serialize()
                                 </a>
                             </code>
                         </div>
-
             </div>
         </div>
     </td>
@@ -292,7 +331,7 @@
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#_unserialize">#</a>
-            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#56-61">unserialize</a>( <span> <span class="property-name">$serialized</span> </span> )</code>
+            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#54-59">unserialize</a>( <span> <span class="property-name">$serialized</span> </span> )</code>
 
             <div class="description">
                 {@inheritdoc}
@@ -303,15 +342,15 @@
 
 
 
-                        <h2>Overrides</h2>
+
+                        <h2>Implementation of</h2>
                         <div>
                             <code>
-                                <a href="class-drupol.valuewrapper.AbstractValue.html#_unserialize">
-                                    drupol\valuewrapper\AbstractValue::unserialize()
+                                <a href="interface-Serializable.html#_unserialize">
+                                    Serializable::unserialize()
                                 </a>
                             </code>
                         </div>
-
             </div>
         </div>
     </td>
@@ -332,7 +371,7 @@
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#___toString">#</a>
-            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#66-69">__toString</a>( )</code>
+            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#64-67">__toString</a>( )</code>
 
             <div class="description">
                 {@inheritdoc}
@@ -372,7 +411,7 @@
     <td class="name">
         <div>
             <a class="anchor pull-right" href="#___toArray">#</a>
-            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#74-77">__toArray</a>( )</code>
+            <code><a href="source-class-drupol.valuewrapper.Type.TypeValue.html#72-75">__toArray</a>( )</code>
 
             <div class="description">
                 {@inheritdoc}
