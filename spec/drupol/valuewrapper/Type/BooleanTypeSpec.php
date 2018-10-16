@@ -75,4 +75,15 @@ class BooleanTypeSpec extends ObjectBehavior
             ->__toArray()
             ->shouldReturn([true]);
     }
+
+    public function it_can_apply_a_callable()
+    {
+        $callable = function ($value) {
+            return $value;
+        };
+
+        $this
+            ->apply($callable)
+            ->shouldReturn($this->value());
+    }
 }

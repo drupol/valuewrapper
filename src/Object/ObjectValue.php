@@ -35,4 +35,14 @@ abstract class ObjectValue extends AbstractValue implements ObjectValueInterface
     {
         return 'object';
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function apply(callable $callable)
+    {
+        $value = clone $this->value();
+
+        return $callable($value);
+    }
 }

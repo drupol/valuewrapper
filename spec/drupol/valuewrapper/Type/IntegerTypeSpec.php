@@ -75,4 +75,15 @@ class IntegerTypeSpec extends ObjectBehavior
             ->__toArray()
             ->shouldReturn([7]);
     }
+
+    public function it_can_apply_a_callable()
+    {
+        $callable = function ($value) {
+            return $value;
+        };
+
+        $this
+            ->apply($callable)
+            ->shouldReturn($this->value());
+    }
 }

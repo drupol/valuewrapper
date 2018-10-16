@@ -47,4 +47,15 @@ class StdClassObjectSpec extends ObjectBehavior
             ->shouldThrow('\BadMethodCallException')
             ->during('hash');
     }
+
+    public function it_can_apply_a_callable()
+    {
+        $callable = function ($value) {
+            return 'hello';
+        };
+
+        $this
+            ->apply($callable)
+            ->shouldReturn('hello');
+    }
 }

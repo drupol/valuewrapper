@@ -67,4 +67,15 @@ class AnonymousObjectSpec extends ObjectBehavior
             ->class()
             ->shouldStartWith('class@anonymous');
     }
+
+    public function it_can_apply_a_callable()
+    {
+        $callable = function ($value) {
+            return 'hello';
+        };
+
+        $this
+            ->apply($callable)
+            ->shouldReturn('hello');
+    }
 }

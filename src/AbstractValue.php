@@ -40,8 +40,24 @@ abstract class AbstractValue implements ValueInterface
         return $this->value();
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function apply(callable $callable)
+    {
+        $value = $this->value();
+
+        return $callable($value);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     abstract public function serialize();
 
+    /**
+     * {@inheritdoc}
+     */
     abstract public function unserialize($serialized);
 
     /**

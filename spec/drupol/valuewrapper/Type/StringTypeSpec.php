@@ -100,4 +100,15 @@ class StringTypeSpec extends ObjectBehavior
             ->__toArray()
             ->shouldReturn(['s', 't', 'r', 'i', 'n', 'g']);
     }
+
+    public function it_can_apply_a_callable()
+    {
+        $callable = function ($value) {
+            return $value;
+        };
+
+        $this
+            ->apply($callable)
+            ->shouldReturn($this->value());
+    }
 }

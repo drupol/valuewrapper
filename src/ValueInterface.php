@@ -19,4 +19,17 @@ interface ValueInterface extends Hashable, Equalable, \Serializable
      *   The original value.
      */
     public function value();
+
+    /**
+     * Apply a callable to the value.
+     *
+     * The value will be the only parameter of the callback..
+     *
+     * @param callable $callable
+     *   The callback to apply to the object's value.
+     *
+     * @return mixed
+     *   The result of the callback.
+     */
+    public function apply(callable $callable);
 }

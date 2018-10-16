@@ -60,4 +60,15 @@ class StreamResourceSpec extends ObjectBehavior
             ->shouldThrow('\ErrorException')
             ->during('unserialize', ['string']);
     }
+
+    public function it_can_apply_a_callable()
+    {
+        $callable = function ($value) {
+            return 'hello';
+        };
+
+        $this
+            ->apply($callable)
+            ->shouldReturn('hello');
+    }
 }

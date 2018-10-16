@@ -75,4 +75,15 @@ class DoubleTypeSpec extends ObjectBehavior
             ->__toArray()
             ->shouldReturn([3.1415]);
     }
+
+    public function it_can_apply_a_callable()
+    {
+        $callable = function ($value) {
+            return $value;
+        };
+
+        $this
+            ->apply($callable)
+            ->shouldReturn($this->value());
+    }
 }
