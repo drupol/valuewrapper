@@ -53,6 +53,11 @@ abstract class AbstractValue implements ValueInterface
     /**
      * {@inheritdoc}
      */
+    abstract public function hash(): string;
+
+    /**
+     * {@inheritdoc}
+     */
     abstract public function serialize();
 
     /**

@@ -32,11 +32,6 @@ abstract class ResourceValue extends AbstractValue implements ResourceValueInter
     /**
      * {@inheritdoc}
      */
-    abstract public function hash(): string;
-
-    /**
-     * {@inheritdoc}
-     */
     public function equals(ValueInterface $item, bool $strict = true) : bool
     {
         return $this->hash() == $item->hash();
