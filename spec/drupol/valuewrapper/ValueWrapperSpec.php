@@ -113,4 +113,17 @@ class ValueWrapperSpec extends ObjectBehavior
         $this->make($stdclass)
             ->shouldBeAnInstanceOf('drupol\valuewrapper\Object\StdClassObject');
     }
+
+    public function it_throws_an_exception_if_no_wrapper_is_found()
+    {
+        $random = new RandomObject();
+
+        $this
+            ->shouldThrow('\OutOfBoundsException')
+            ->during('make', [$random]);
+    }
+}
+
+class RandomObject
+{
 }

@@ -15,7 +15,6 @@ class ValueWrapper implements ValueWrapperInterface
      * @var array
      */
     public static $typeMappingRegistry = [
-        '*' => \drupol\valuewrapper\Type\TypeValue::class,
         'string' => \drupol\valuewrapper\Type\StringType::class,
         'array' => \drupol\valuewrapper\Type\ArrayType::class,
         'null' => \drupol\valuewrapper\Type\NullType::class,
@@ -30,7 +29,6 @@ class ValueWrapper implements ValueWrapperInterface
      * @var array
      */
     public static $objectMappingRegistry = [
-        '*' => \drupol\valuewrapper\Object\ObjectValue::class,
         'stdClass' => \drupol\valuewrapper\Object\StdClassObject::class,
         'Anonymous' => \drupol\valuewrapper\Object\AnonymousObject::class,
         'Closure' => \drupol\valuewrapper\Object\ClosureObject::class,
@@ -43,7 +41,6 @@ class ValueWrapper implements ValueWrapperInterface
      * @var array
      */
     public static $resourceMappingRegistry = [
-        '*' => \drupol\valuewrapper\Resource\ResourceValue::class,
         'stream' => \drupol\valuewrapper\Resource\StreamResource::class,
     ];
 
@@ -86,9 +83,13 @@ class ValueWrapper implements ValueWrapperInterface
                 break;
         }
 
-        $class = $mappings[$type] ?? $mappings['*'];
+        if (isset($mappings[$type])) {
+            return new $mappings[$type]($value);
+        }
 
-        return new $class($value);
+        throw new \OutOfBoundsException(
+            sprintf('Unable to find a wrapping class for value if type %s.', $type)
+        );
     }
 
     /**
