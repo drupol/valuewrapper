@@ -151,13 +151,13 @@
 </span><span class="l" id="line-83">                <span class="php-keyword1">break</span>;
 </span><span class="l" id="line-84">        }
 </span><span class="l" id="line-85">
-</span><span class="l" id="line-86">        <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$mappings</span>[<span class="php-var">$type</span>])) {
-</span><span class="l" id="line-87">            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \OutOfBoundsException(
-</span><span class="l" id="line-88">                <span class="php-keyword2">sprintf</span>(<span class="php-quote">'Unable to find a wrapping class for value if type %s.'</span>, <span class="php-var">$type</span>)
-</span><span class="l" id="line-89">            );
-</span><span class="l" id="line-90">        }
-</span><span class="l" id="line-91">
-</span><span class="l" id="line-92">        <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> <span class="php-var">$mappings</span>[<span class="php-var">$type</span>](<span class="php-var">$value</span>);
+</span><span class="l" id="line-86">        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$mappings</span>[<span class="php-var">$type</span>])) {
+</span><span class="l" id="line-87">            <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> <span class="php-var">$mappings</span>[<span class="php-var">$type</span>](<span class="php-var">$value</span>);
+</span><span class="l" id="line-88">        }
+</span><span class="l" id="line-89">
+</span><span class="l" id="line-90">        <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \OutOfBoundsException(
+</span><span class="l" id="line-91">            <span class="php-keyword2">sprintf</span>(<span class="php-quote">'Unable to find a wrapping class for value if type %s.'</span>, <span class="php-var">$type</span>)
+</span><span class="l" id="line-92">        );
 </span><span class="l" id="line-93">    }
 </span><span class="l" id="line-94">
 </span><span class="l" id="line-95">    <span class="php-comment">/**
