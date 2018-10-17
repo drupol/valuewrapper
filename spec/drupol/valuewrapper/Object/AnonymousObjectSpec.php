@@ -4,10 +4,9 @@ declare(strict_types = 1);
 
 namespace spec\drupol\valuewrapper\Object;
 
+use drupol\valuewrapper\Contract\Hashable;
 use drupol\valuewrapper\Object\AnonymousObject;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
-use drupol\valuewrapper\Contract\Hashable;
 
 class AnonymousObjectSpec extends ObjectBehavior
 {

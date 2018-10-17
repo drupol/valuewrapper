@@ -7,7 +7,6 @@ namespace spec\drupol\valuewrapper\Type;
 
 use drupol\valuewrapper\Type\StringType;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class StringTypeSpec extends ObjectBehavior
 {

@@ -7,7 +7,6 @@ namespace spec\drupol\valuewrapper\Object;
 use drupol\valuewrapper\Object\ClosureObject;
 use drupol\valuewrapper\ValueWrapper;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ClosureObjectSpec extends ObjectBehavior
 {

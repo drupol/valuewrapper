@@ -6,9 +6,7 @@ declare(strict_types = 0);
 namespace spec\drupol\valuewrapper\Type;
 
 use drupol\valuewrapper\Type\BooleanType;
-use drupol\valuewrapper\ValueWrapper;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class BooleanTypeSpec extends ObjectBehavior
 {

@@ -88,7 +88,7 @@ class ValueWrapper implements ValueWrapperInterface
         }
 
         throw new \OutOfBoundsException(
-            sprintf('Unable to find a wrapping class for value if type %s.', $type)
+            sprintf('Unable to find a wrapping class for value type "%s".', $type)
         );
     }
 

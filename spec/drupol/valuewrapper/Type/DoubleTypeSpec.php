@@ -4,7 +4,6 @@ namespace spec\drupol\valuewrapper\Type;
 
 use drupol\valuewrapper\Type\DoubleType;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class DoubleTypeSpec extends ObjectBehavior
 {

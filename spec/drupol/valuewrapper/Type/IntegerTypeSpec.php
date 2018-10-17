@@ -4,7 +4,6 @@ namespace spec\drupol\valuewrapper\Type;
 
 use drupol\valuewrapper\Type\IntegerType;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class IntegerTypeSpec extends ObjectBehavior
 {

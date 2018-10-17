@@ -4,8 +4,8 @@ declare(strict_types = 1);
 
 namespace drupol\valuewrapper;
 
-use drupol\valuewrapper\Contract\Hashable;
 use drupol\valuewrapper\Contract\Equalable;
+use drupol\valuewrapper\Contract\Hashable;
 
 /**
  * Interface ValueInterface

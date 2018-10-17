@@ -5,7 +5,6 @@ namespace spec\drupol\valuewrapper\Resource;
 use drupol\valuewrapper\Resource\StreamResource;
 use drupol\valuewrapper\ValueWrapper;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class StreamResourceSpec extends ObjectBehavior
 {

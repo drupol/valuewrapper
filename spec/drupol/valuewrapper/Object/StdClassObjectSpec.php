@@ -4,7 +4,6 @@ namespace spec\drupol\valuewrapper\Object;
 
 use drupol\valuewrapper\Object\StdClassObject;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class StdClassObjectSpec extends ObjectBehavior
 {

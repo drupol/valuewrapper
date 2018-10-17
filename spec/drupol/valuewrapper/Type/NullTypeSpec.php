@@ -6,7 +6,6 @@ namespace spec\drupol\valuewrapper\Type;
 
 use drupol\valuewrapper\Type\NullType;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class NullTypeSpec extends ObjectBehavior
 {
