@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="resources/style.css">
 
         <title>
-            Class drupol\valuewrapper\Object\ObjectValue | ValueWrapper API documentation
+            Class drupol\valuewrapper\Object\Exception\AbstractExceptionObject | ValueWrapper API documentation
         </title>
     </head>
 
@@ -82,9 +82,13 @@
         <li>
             <a href="namespace-drupol.valuewrapper.Object.html">Object</a>
         </li>
+            <li class="backslash">\</li>
+        <li>
+            <a href="namespace-drupol.valuewrapper.Object.Exception.html">Exception</a>
+        </li>
 
         <li class="backslash">\</li>
-        <li class="active">ObjectValue</li>
+        <li class="active">AbstractExceptionObject</li>
 </ol>
                         </div>
                     </div>
@@ -94,37 +98,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-    <h1>ObjectValue</h1>
+    <h1>AbstractExceptionObject</h1>
 
         <div class="panel panel-default">
             <div class="panel-body">
-                Class ObjectValue
+                Class AbstractExceptionObject
             </div>
         </div>
 
         <dl class="tree">
             <dd>
                     extends
-                    <a href="class-drupol.valuewrapper.AbstractValue.html">
-                        drupol\valuewrapper\AbstractValue
+                    <a href="class-drupol.valuewrapper.Object.ObjectValue.html">
+                        drupol\valuewrapper\Object\ObjectValue
                     </a>
 
-                    implements
-                        <a href="interface-Serializable.html">
-                            Serializable
-                        </a>, 
-                        <a href="interface-drupol.valuewrapper.Contract.Equalable.html">
-                            drupol\valuewrapper\Contract\Equalable
-                        </a>, 
-                        <a href="interface-drupol.valuewrapper.Contract.Hashable.html">
-                            drupol\valuewrapper\Contract\Hashable
-                        </a>, 
-                        <a href="interface-drupol.valuewrapper.Object.ObjectValueInterface.html">
-                            drupol\valuewrapper\Object\ObjectValueInterface
-                        </a>, 
-                        <a href="interface-drupol.valuewrapper.ValueInterface.html">
-                            drupol\valuewrapper\ValueInterface
-                        </a>
 
             </dd>
         </dl>
@@ -132,26 +120,21 @@
 
         <div>
             <h2>Known subclasses</h2>
-            <a href="class-drupol.valuewrapper.Object.AnonymousObject.html">drupol\valuewrapper\Object\AnonymousObject</a>, 
-            <a href="class-drupol.valuewrapper.Object.ClosureObject.html">drupol\valuewrapper\Object\ClosureObject</a>, 
-            <a href="class-drupol.valuewrapper.Object.DateTimeObject.html">drupol\valuewrapper\Object\DateTimeObject</a>, 
             <a href="class-drupol.valuewrapper.Object.Exception.AbstractArithmeticErrorObject.html">drupol\valuewrapper\Object\Exception\AbstractArithmeticErrorObject</a>, 
             <a href="class-drupol.valuewrapper.Object.Exception.AbstractErrorObject.html">drupol\valuewrapper\Object\Exception\AbstractErrorObject</a>, 
-            <a href="class-drupol.valuewrapper.Object.Exception.AbstractExceptionObject.html">drupol\valuewrapper\Object\Exception\AbstractExceptionObject</a>, 
             <a href="class-drupol.valuewrapper.Object.Exception.ArithmeticErrorObject.html">drupol\valuewrapper\Object\Exception\ArithmeticErrorObject</a>, 
             <a href="class-drupol.valuewrapper.Object.Exception.AssertionErrorObject.html">drupol\valuewrapper\Object\Exception\AssertionErrorObject</a>, 
             <a href="class-drupol.valuewrapper.Object.Exception.DivisionByZeroErrorObject.html">drupol\valuewrapper\Object\Exception\DivisionByZeroErrorObject</a>, 
             <a href="class-drupol.valuewrapper.Object.Exception.ErrorObject.html">drupol\valuewrapper\Object\Exception\ErrorObject</a>, 
             <a href="class-drupol.valuewrapper.Object.Exception.ExceptionObject.html">drupol\valuewrapper\Object\Exception\ExceptionObject</a>, 
             <a href="class-drupol.valuewrapper.Object.Exception.ParseErrorObject.html">drupol\valuewrapper\Object\Exception\ParseErrorObject</a>, 
-            <a href="class-drupol.valuewrapper.Object.Exception.TypeErrorObject.html">drupol\valuewrapper\Object\Exception\TypeErrorObject</a>, 
-            <a href="class-drupol.valuewrapper.Object.StdClassObject.html">drupol\valuewrapper\Object\StdClassObject</a>
+            <a href="class-drupol.valuewrapper.Object.Exception.TypeErrorObject.html">drupol\valuewrapper\Object\Exception\TypeErrorObject</a>
         </div>
 
     <div class="info">
         <strong>Abstract</strong><br>
 
-            <a href="source-class-drupol.valuewrapper.Object.ObjectValue.html" class="open-source-code">Open source code</a>
+            <a href="source-class-drupol.valuewrapper.Object.Exception.AbstractExceptionObject.html" class="open-source-code">Open source code</a>
         <br>
     </div>
 
@@ -160,7 +143,7 @@
 
 
 
-<tr id="_equals">
+<tr id="___construct">
 
     <td class="attributes col-md-1">
         <code class="keyword">
@@ -172,131 +155,11 @@
 
     <td class="name">
         <div>
-            <a class="anchor pull-right" href="#_equals">#</a>
-            <code><a href="source-class-drupol.valuewrapper.Object.ObjectValue.html#18-21">equals</a>( <span> <a href="interface-drupol.valuewrapper.ValueInterface.html">drupol\valuewrapper\ValueInterface</a> <span class="property-name">$item</span> </span>, <span> bool <span class="property-name">$strict</span> = <span class="php-keyword1">true</span></span> )</code>
+            <a class="anchor pull-right" href="#___construct">#</a>
+            <code><a href="source-class-drupol.valuewrapper.Object.Exception.AbstractExceptionObject.html#19-22">__construct</a>( <span> Throwable <span class="property-name">$value</span> </span> )</code>
 
             <div class="description">
-                {@inheritdoc}
-
-
-
-
-
-
-
-
-                        <h2>Implementation of</h2>
-                        <div>
-                            <code>
-                                <a href="interface-drupol.valuewrapper.Contract.Equalable.html#_equals">
-                                    drupol\valuewrapper\Contract\Equalable::equals()
-                                </a>
-                            </code>
-                        </div>
-            </div>
-        </div>
-    </td>
-</tr>
-
-
-
-<tr id="_class">
-
-    <td class="attributes col-md-1">
-        <code class="keyword">
-                 public 
-                
-                
-        </code>
-    </td>
-
-    <td class="name">
-        <div>
-            <a class="anchor pull-right" href="#_class">#</a>
-            <code><a href="source-class-drupol.valuewrapper.Object.ObjectValue.html#26-29">class</a>( )</code>
-
-            <div class="description">
-                {@inheritdoc}
-
-
-
-
-
-
-
-
-                        <h2>Implementation of</h2>
-                        <div>
-                            <code>
-                                <a href="interface-drupol.valuewrapper.Object.ObjectValueInterface.html#_class">
-                                    drupol\valuewrapper\Object\ObjectValueInterface::class()
-                                </a>
-                            </code>
-                        </div>
-            </div>
-        </div>
-    </td>
-</tr>
-
-
-
-<tr id="_type">
-
-    <td class="attributes col-md-1">
-        <code class="keyword">
-                 public 
-                
-                
-        </code>
-    </td>
-
-    <td class="name">
-        <div>
-            <a class="anchor pull-right" href="#_type">#</a>
-            <code><a href="source-class-drupol.valuewrapper.Object.ObjectValue.html#34-37">type</a>( )</code>
-
-            <div class="description">
-                {@inheritdoc}
-
-
-
-
-
-
-
-
-                        <h2>Implementation of</h2>
-                        <div>
-                            <code>
-                                <a href="interface-drupol.valuewrapper.Object.ObjectValueInterface.html#_type">
-                                    drupol\valuewrapper\Object\ObjectValueInterface::type()
-                                </a>
-                            </code>
-                        </div>
-            </div>
-        </div>
-    </td>
-</tr>
-
-
-
-<tr id="_apply">
-
-    <td class="attributes col-md-1">
-        <code class="keyword">
-                 public 
-                
-                
-        </code>
-    </td>
-
-    <td class="name">
-        <div>
-            <a class="anchor pull-right" href="#_apply">#</a>
-            <code><a href="source-class-drupol.valuewrapper.Object.ObjectValue.html#42-47">apply</a>( <span> callable <span class="property-name">$callable</span> </span> )</code>
-
-            <div class="description">
-                {@inheritdoc}
+                Throwable constructor.
 
 
 
@@ -307,26 +170,129 @@
                         <h2>Overrides</h2>
                         <div>
                             <code>
-                                <a href="class-drupol.valuewrapper.AbstractValue.html#_apply">
-                                    drupol\valuewrapper\AbstractValue::apply()
+                                <a href="class-drupol.valuewrapper.AbstractValue.html#___construct">
+                                    drupol\valuewrapper\AbstractValue::__construct()
                                 </a>
                             </code>
                         </div>
 
-                        <h2>Implementation of</h2>
-                        <div>
-                            <code>
-                                <a href="interface-drupol.valuewrapper.ValueInterface.html#_apply">
-                                    drupol\valuewrapper\ValueInterface::apply()
-                                </a>
-                            </code>
-                        </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_hash">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public 
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_hash">#</a>
+            <code><a href="source-class-drupol.valuewrapper.Object.Exception.AbstractExceptionObject.html#27-39">hash</a>( )</code>
+
+            <div class="description">
+                {@inheritdoc}
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_serialize">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public 
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_serialize">#</a>
+            <code><a href="source-class-drupol.valuewrapper.Object.Exception.AbstractExceptionObject.html#44-53">serialize</a>( )</code>
+
+            <div class="description">
+                {@inheritdoc}
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+
+
+<tr id="_unserialize">
+
+    <td class="attributes col-md-1">
+        <code class="keyword">
+                 public 
+                
+                
+        </code>
+    </td>
+
+    <td class="name">
+        <div>
+            <a class="anchor pull-right" href="#_unserialize">#</a>
+            <code><a href="source-class-drupol.valuewrapper.Object.Exception.AbstractExceptionObject.html#58-67">unserialize</a>( <span> <span class="property-name">$serialized</span> </span> )</code>
+
+            <div class="description">
+                {@inheritdoc}
+
+
+
+
+
+
+
+
             </div>
         </div>
     </td>
 </tr>
         </table>
 
+        <table class="summary table table-bordered table-responsive table-striped">
+            <tr>
+                <th>
+                    Methods inherited from <a href="class-drupol.valuewrapper.Object.ObjectValue.html#methods">drupol\valuewrapper\Object\ObjectValue</a>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                        <code><a href="class-drupol.valuewrapper.Object.ObjectValue.html#_equals">equals()</a></code>, 
+                        <code><a href="class-drupol.valuewrapper.Object.ObjectValue.html#_class">class()</a></code>, 
+                        <code><a href="class-drupol.valuewrapper.Object.ObjectValue.html#_type">type()</a></code>, 
+                        <code><a href="class-drupol.valuewrapper.Object.ObjectValue.html#_apply">apply()</a></code>
+                </td>
+            </tr>
+        </table>
         <table class="summary table table-bordered table-responsive table-striped">
             <tr>
                 <th>
