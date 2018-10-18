@@ -118,7 +118,7 @@
 </span><span class="l" id="line-50">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">serialize</span>()
 </span><span class="l" id="line-51">    {
 </span><span class="l" id="line-52">        <span class="php-keyword1">return</span> \<span class="php-keyword2">serialize</span>([
-</span><span class="l" id="line-53">            <span class="php-quote">'value'</span> =&gt; <span class="php-keyword2">base64_encode</span>(<span class="php-var">$this</span>-&gt;serializer-&gt;<span class="php-keyword2">serialize</span>(<span class="php-var">$this</span>-&gt;value())),
+</span><span class="l" id="line-53">            <span class="php-quote">'value'</span> =&gt; \<span class="php-keyword2">base64_encode</span>(<span class="php-var">$this</span>-&gt;serializer-&gt;<span class="php-keyword2">serialize</span>(<span class="php-var">$this</span>-&gt;value())),
 </span><span class="l" id="line-54">        ]);
 </span><span class="l" id="line-55">    }
 </span><span class="l" id="line-56">
@@ -130,7 +130,7 @@
 </span><span class="l" id="line-62">        <span class="php-var">$unserialized</span> = \<span class="php-keyword2">unserialize</span>(<span class="php-var">$serialized</span>);
 </span><span class="l" id="line-63">
 </span><span class="l" id="line-64">        <span class="php-var">$this</span>-&gt;set(
-</span><span class="l" id="line-65">            <span class="php-var">$this</span>-&gt;serializer-&gt;<span class="php-keyword2">unserialize</span>(<span class="php-keyword2">base64_decode</span>(<span class="php-var">$unserialized</span>[<span class="php-quote">'value'</span>]))
+</span><span class="l" id="line-65">            <span class="php-var">$this</span>-&gt;serializer-&gt;<span class="php-keyword2">unserialize</span>(\<span class="php-keyword2">base64_decode</span>(<span class="php-var">$unserialized</span>[<span class="php-quote">'value'</span>]))
 </span><span class="l" id="line-66">        );
 </span><span class="l" id="line-67">    }
 </span><span class="l" id="line-68">}
