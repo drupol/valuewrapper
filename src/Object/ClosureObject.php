@@ -50,7 +50,7 @@ class ClosureObject extends ObjectValue
     public function serialize()
     {
         return \serialize([
-            'value' => base64_encode($this->serializer->serialize($this->value())),
+            'value' => \base64_encode($this->serializer->serialize($this->value())),
         ]);
     }
 
@@ -62,7 +62,7 @@ class ClosureObject extends ObjectValue
         $unserialized = \unserialize($serialized);
 
         $this->set(
-            $this->serializer->unserialize(base64_decode($unserialized['value']))
+            $this->serializer->unserialize(\base64_decode($unserialized['value']))
         );
     }
 }

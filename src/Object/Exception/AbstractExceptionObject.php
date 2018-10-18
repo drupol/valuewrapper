@@ -12,7 +12,7 @@ use drupol\valuewrapper\Object\ObjectValue;
 abstract class AbstractExceptionObject extends ObjectValue
 {
     /**
-     * Throwable constructor.
+     * AbstractExceptionObject constructor.
      *
      * @param \Throwable $value
      */
