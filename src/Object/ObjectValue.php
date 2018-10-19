@@ -17,7 +17,7 @@ abstract class ObjectValue extends AbstractValue implements ObjectValueInterface
      */
     public function equals(ValueInterface $item, bool $strict = true): bool
     {
-        return $this->hash() == $item->hash();
+        return $this->hash() === $item->hash();
     }
 
     /**
