@@ -82,7 +82,7 @@ abstract class AbstractValue implements ValueInterface
      *
      * @param mixed $value
      */
-    protected function set($value)
+    protected function set($value): void
     {
         $this->value = $value;
     }
