@@ -75,7 +75,7 @@ class ValueWrapper implements ValueWrapperInterface
                 $mappings = self::$objectMappingRegistry;
                 $type = \get_class($value);
 
-                if (0 === strpos($type, 'class@anonymous')) {
+                if (0 === \strpos($type, 'class@anonymous')) {
                     $type = 'Anonymous';
                 }
                 break;
@@ -95,7 +95,7 @@ class ValueWrapper implements ValueWrapperInterface
         }
 
         throw new \OutOfBoundsException(
-            sprintf('Unable to find a wrapping class for value type "%s".', $type)
+            \sprintf('Unable to find a wrapping class for value type "%s".', $type)
         );
     }
 

@@ -69,14 +69,6 @@ abstract class TypeValue extends AbstractValue implements TypeValueInterface
     /**
      * {@inheritdoc}
      */
-    public function __toString(): string
-    {
-        return (string) $this->value();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function __toArray(): array
     {
         return (array) $this->value();

@@ -18,12 +18,4 @@ class BooleanType extends TypeValue
     {
         parent::__construct($value);
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString(): string
-    {
-        throw new \BadMethodCallException('Unable to convert a boolean to string.');
-    }
 }

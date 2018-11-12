@@ -11,7 +11,7 @@ use drupol\valuewrapper\ValueInterface;
 /**
  * Interface TypeValueInterface
  */
-interface TypeValueInterface extends ValueInterface, Stringable, Arrayable
+interface TypeValueInterface extends ValueInterface, Arrayable
 {
     /**
      * {@inheritdoc}
