@@ -143,7 +143,7 @@
 </span><span class="l" id="line-75">                <span class="php-var">$mappings</span> = self::<span class="php-var">$objectMappingRegistry</span>;
 </span><span class="l" id="line-76">                <span class="php-var">$type</span> = \<span class="php-keyword2">get_class</span>(<span class="php-var">$value</span>);
 </span><span class="l" id="line-77">
-</span><span class="l" id="line-78">                <span class="php-keyword1">if</span> (<span class="php-num">0</span> === <span class="php-keyword2">strpos</span>(<span class="php-var">$type</span>, <span class="php-quote">'class@anonymous'</span>)) {
+</span><span class="l" id="line-78">                <span class="php-keyword1">if</span> (<span class="php-num">0</span> === \<span class="php-keyword2">strpos</span>(<span class="php-var">$type</span>, <span class="php-quote">'class@anonymous'</span>)) {
 </span><span class="l" id="line-79">                    <span class="php-var">$type</span> = <span class="php-quote">'Anonymous'</span>;
 </span><span class="l" id="line-80">                }
 </span><span class="l" id="line-81">                <span class="php-keyword1">break</span>;
@@ -163,7 +163,7 @@
 </span><span class="l" id="line-95">        }
 </span><span class="l" id="line-96">
 </span><span class="l" id="line-97">        <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \OutOfBoundsException(
-</span><span class="l" id="line-98">            <span class="php-keyword2">sprintf</span>(<span class="php-quote">'Unable to find a wrapping class for value type &quot;%s&quot;.'</span>, <span class="php-var">$type</span>)
+</span><span class="l" id="line-98">            \<span class="php-keyword2">sprintf</span>(<span class="php-quote">'Unable to find a wrapping class for value type &quot;%s&quot;.'</span>, <span class="php-var">$type</span>)
 </span><span class="l" id="line-99">        );
 </span><span class="l" id="line-100">    }
 </span><span class="l" id="line-101">
