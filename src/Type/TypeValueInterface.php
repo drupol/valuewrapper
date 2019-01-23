@@ -8,7 +8,7 @@ use drupol\valuewrapper\Contract\Arrayable;
 use drupol\valuewrapper\ValueInterface;
 
 /**
- * Interface TypeValueInterface
+ * Interface TypeValueInterface.
  */
 interface TypeValueInterface extends ValueInterface, Arrayable
 {

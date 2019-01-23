@@ -8,16 +8,18 @@ use drupol\valuewrapper\AbstractValue;
 use drupol\valuewrapper\ValueInterface;
 
 /**
- * Class ObjectValue
+ * Class ObjectValue.
  */
 abstract class ObjectValue extends AbstractValue implements ObjectValueInterface
 {
     /**
      * {@inheritdoc}
      */
-    public function equals(ValueInterface $item, bool $strict = true): bool
+    public function apply(callable $callable)
     {
-        return $this->hash() === $item->hash();
+        $value = clone $this->value();
+
+        return $callable($value);
     }
 
     /**
@@ -31,18 +33,16 @@ abstract class ObjectValue extends AbstractValue implements ObjectValueInterface
     /**
      * {@inheritdoc}
      */
-    public function type(): string
+    public function equals(ValueInterface $item, bool $strict = true): bool
     {
-        return 'object';
+        return $this->hash() === $item->hash();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function apply(callable $callable)
+    public function type(): string
     {
-        $value = clone $this->value();
-
-        return $callable($value);
+        return 'object';
     }
 }

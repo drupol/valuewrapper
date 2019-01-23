@@ -7,7 +7,7 @@ namespace drupol\valuewrapper\Type;
 use drupol\valuewrapper\Contract\Stringable;
 
 /**
- * Class IntegerType
+ * Class IntegerType.
  */
 class IntegerType extends TypeValue implements Stringable
 {

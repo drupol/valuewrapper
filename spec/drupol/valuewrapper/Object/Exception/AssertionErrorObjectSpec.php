@@ -1,26 +1,15 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace spec\drupol\valuewrapper\Object\Exception;
 
 use drupol\valuewrapper\Object\Exception\AssertionErrorObject;
 use drupol\valuewrapper\ValueWrapper;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class AssertionErrorObjectSpec extends ObjectBehavior
 {
-    public function let()
-    {
-        $exception = new \AssertionError('Hello world!', 404);
-
-        $this->beConstructedWith($exception);
-    }
-
-    public function it_is_initializable()
-    {
-        $this->shouldHaveType(AssertionErrorObject::class);
-    }
-
     public function it_can_hash()
     {
         $this
@@ -45,5 +34,17 @@ class AssertionErrorObjectSpec extends ObjectBehavior
         $this
             ->equals($exception)
             ->shouldReturn(true);
+    }
+
+    public function it_is_initializable()
+    {
+        $this->shouldHaveType(AssertionErrorObject::class);
+    }
+
+    public function let()
+    {
+        $exception = new \AssertionError('Hello world!', 404);
+
+        $this->beConstructedWith($exception);
     }
 }

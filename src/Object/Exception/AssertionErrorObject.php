@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper\Object\Exception;
 
 /**
- * Class AssertionErrorObject
+ * Class AssertionErrorObject.
  */
 class AssertionErrorObject extends AbstractErrorObject
 {

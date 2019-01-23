@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper\Type;
 
 /**
- * Class NullType
+ * Class NullType.
  */
 class NullType extends TypeValue
 {

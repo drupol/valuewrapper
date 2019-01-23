@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper\Object;
 
 /**
- * Class DateTimeObject
+ * Class DateTimeObject.
  */
 class DateTimeObject extends ObjectValue
 {

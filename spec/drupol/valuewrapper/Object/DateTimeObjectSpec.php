@@ -10,16 +10,22 @@ use PhpSpec\ObjectBehavior;
 
 class DateTimeObjectSpec extends ObjectBehavior
 {
-    public function let()
+    public function it_can_apply_a_callable()
     {
-        $datetime = new \DateTime('2018-10-10');
+        $callable = function ($value) {
+            return 'hello';
+        };
 
-        $this->beConstructedWith($datetime);
+        $this
+            ->apply($callable)
+            ->shouldReturn('hello');
     }
 
-    public function it_is_initializable()
+    public function it_can_get_its_class()
     {
-        $this->shouldHaveType(DateTimeObject::class);
+        $this
+            ->class()
+            ->shouldReturn('DateTime');
     }
 
     public function it_can_hash()
@@ -48,21 +54,15 @@ class DateTimeObjectSpec extends ObjectBehavior
             ->shouldReturn(true);
     }
 
-    public function it_can_get_its_class()
+    public function it_is_initializable()
     {
-        $this
-            ->class()
-            ->shouldReturn('DateTime');
+        $this->shouldHaveType(DateTimeObject::class);
     }
 
-    public function it_can_apply_a_callable()
+    public function let()
     {
-        $callable = function ($value) {
-            return 'hello';
-        };
+        $datetime = new \DateTime('2018-10-10');
 
-        $this
-            ->apply($callable)
-            ->shouldReturn('hello');
+        $this->beConstructedWith($datetime);
     }
 }

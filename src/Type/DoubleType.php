@@ -7,7 +7,7 @@ namespace drupol\valuewrapper\Type;
 use drupol\valuewrapper\Contract\Stringable;
 
 /**
- * Class DoubleType
+ * Class DoubleType.
  */
 class DoubleType extends TypeValue implements Stringable
 {

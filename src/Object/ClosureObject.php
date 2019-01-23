@@ -7,7 +7,7 @@ namespace drupol\valuewrapper\Object;
 use SuperClosure\Serializer;
 
 /**
- * Class ClosureObject
+ * Class ClosureObject.
  */
 class ClosureObject extends ObjectValue
 {
@@ -31,17 +31,17 @@ class ClosureObject extends ObjectValue
     /**
      * {@inheritdoc}
      */
-    public function hash(): string
+    public function __invoke()
     {
-        return $this->doHash($this->type() . $this->serializer->serialize($this->value()));
+        return \call_user_func_array($this->value(), \func_get_args());
     }
 
     /**
      * {@inheritdoc}
      */
-    public function __invoke()
+    public function hash(): string
     {
-        return \call_user_func_array($this->value(), \func_get_args());
+        return $this->doHash($this->type() . $this->serializer->serialize($this->value()));
     }
 
     /**
@@ -62,7 +62,7 @@ class ClosureObject extends ObjectValue
         $unserialized = \unserialize($serialized);
 
         $this->set(
-            $this->serializer->unserialize(\base64_decode($unserialized['value']))
+            $this->serializer->unserialize(\base64_decode($unserialized['value'], true))
         );
     }
 }

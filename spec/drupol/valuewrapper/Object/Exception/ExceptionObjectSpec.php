@@ -1,26 +1,15 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace spec\drupol\valuewrapper\Object\Exception;
 
 use drupol\valuewrapper\Object\Exception\ExceptionObject;
 use drupol\valuewrapper\ValueWrapper;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ExceptionObjectSpec extends ObjectBehavior
 {
-    public function let()
-    {
-        $exception = new \Exception('Hello world!', 404);
-
-        $this->beConstructedWith($exception);
-    }
-
-    public function it_is_initializable()
-    {
-        $this->shouldHaveType(ExceptionObject::class);
-    }
-
     public function it_can_hash()
     {
         $this
@@ -45,5 +34,17 @@ class ExceptionObjectSpec extends ObjectBehavior
         $this
             ->equals($exception)
             ->shouldReturn(true);
+    }
+
+    public function it_is_initializable()
+    {
+        $this->shouldHaveType(ExceptionObject::class);
+    }
+
+    public function let()
+    {
+        $exception = new \Exception('Hello world!', 404);
+
+        $this->beConstructedWith($exception);
     }
 }

@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper\Type;
 
 /**
- * Class BooleanType
+ * Class BooleanType.
  */
 class BooleanType extends TypeValue
 {

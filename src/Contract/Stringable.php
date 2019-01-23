@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper\Contract;
 
 /**
- * Interface Stringable
+ * Interface Stringable.
  */
 interface Stringable
 {
@@ -13,7 +13,7 @@ interface Stringable
      * Get the string representation of the object.
      *
      * @return string
-     *   The object's value as a string.
+     *   The object's value as a string
      */
-    public function __toString() : string;
+    public function __toString(): string;
 }

@@ -8,7 +8,7 @@ use drupol\valuewrapper\AbstractValue;
 use drupol\valuewrapper\ValueInterface;
 
 /**
- * Class ResourceValue
+ * Class ResourceValue.
  */
 abstract class ResourceValue extends AbstractValue implements ResourceValueInterface
 {
@@ -19,7 +19,7 @@ abstract class ResourceValue extends AbstractValue implements ResourceValueInter
      */
     public function __construct($value)
     {
-        if (false == \is_resource($value)) {
+        if (false === \is_resource($value)) {
             throw new \TypeError(
                 'Argument 1 passed to drupol\valuewrapper\Resource\ResourceValue::__construct()' .
                 'must be of the type Resource, ' . gettype($value) . ' given.'
@@ -48,16 +48,16 @@ abstract class ResourceValue extends AbstractValue implements ResourceValueInter
     /**
      * {@inheritdoc}
      */
-    public function unserialize($serialized)
+    public function type(): string
     {
-        throw new \ErrorException('Unsupported method.');
+        return \get_resource_type($this->value());
     }
 
     /**
      * {@inheritdoc}
      */
-    public function type(): string
+    public function unserialize($serialized)
     {
-        return \get_resource_type($this->value());
+        throw new \ErrorException('Unsupported method.');
     }
 }

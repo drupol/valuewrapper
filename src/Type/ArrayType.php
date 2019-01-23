@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper\Type;
 
 /**
- * Class ArrayType
+ * Class ArrayType.
  */
 class ArrayType extends TypeValue
 {

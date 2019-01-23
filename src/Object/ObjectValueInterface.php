@@ -7,7 +7,7 @@ namespace drupol\valuewrapper\Object;
 use drupol\valuewrapper\ValueInterface;
 
 /**
- * Interface ObjectValueInterface
+ * Interface ObjectValueInterface.
  */
 interface ObjectValueInterface extends ValueInterface
 {

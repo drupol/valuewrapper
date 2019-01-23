@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper;
 
 /**
- * Interface ValueWrapperInterface
+ * Interface ValueWrapperInterface.
  */
 interface ValueWrapperInterface
 {
@@ -14,16 +14,16 @@ interface ValueWrapperInterface
      *   The value
      *
      * @return \drupol\valuewrapper\ValueInterface
-     *   The value object wrapping the value parameter.
+     *   The value object wrapping the value parameter
      */
-    public static function create($value) : ValueInterface;
+    public static function create($value): ValueInterface;
 
     /**
      * @param mixed $value
      *   The value
      *
      * @return \drupol\valuewrapper\ValueInterface
-     *   The value object wrapping the value parameter.
+     *   The value object wrapping the value parameter
      */
-    public function make($value) : ValueInterface;
+    public function make($value): ValueInterface;
 }

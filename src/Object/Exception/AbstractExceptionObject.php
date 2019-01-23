@@ -7,7 +7,7 @@ namespace drupol\valuewrapper\Object\Exception;
 use drupol\valuewrapper\Object\ObjectValue;
 
 /**
- * Class AbstractExceptionObject
+ * Class AbstractExceptionObject.
  */
 abstract class AbstractExceptionObject extends ObjectValue
 {

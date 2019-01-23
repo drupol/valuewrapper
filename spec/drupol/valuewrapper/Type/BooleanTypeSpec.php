@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 // On purpose.
 declare(strict_types = 0);
 
@@ -10,21 +12,22 @@ use PhpSpec\ObjectBehavior;
 
 class BooleanTypeSpec extends ObjectBehavior
 {
-    public function let()
+    public function it_can_apply_a_callable()
     {
-        $this->beConstructedWith(true);
+        $callable = function ($value) {
+            return $value;
+        };
+
+        $this
+            ->apply($callable)
+            ->shouldReturn($this->value());
     }
 
-    public function it_is_initializable()
-    {
-        $this->shouldHaveType(BooleanType::class);
-    }
-
-    public function it_can_hash_a_boolean()
+    public function it_can_be_casted_as_an_array()
     {
         $this
-            ->hash()
-            ->shouldReturn('281ba5365fc65c7ea47c3b306a292f9518c1cc70');
+            ->__toArray()
+            ->shouldReturn([true]);
     }
 
     public function it_can_get_the_type()
@@ -34,14 +37,11 @@ class BooleanTypeSpec extends ObjectBehavior
             ->shouldReturn('boolean');
     }
 
-    public function it_tmp2(BooleanType $bool)
+    public function it_can_hash_a_boolean()
     {
-        $this->beConstructedWith(1);
-        $bool->beConstructedWith([3]);
-
         $this
             ->hash()
-            ->shouldNotBeEqualTo($bool->hash());
+            ->shouldReturn('281ba5365fc65c7ea47c3b306a292f9518c1cc70');
     }
 
     public function it_can_serialize()
@@ -60,21 +60,23 @@ class BooleanTypeSpec extends ObjectBehavior
             ->shouldReturn(true);
     }
 
-    public function it_can_be_casted_as_an_array()
+    public function it_is_initializable()
     {
-        $this
-            ->__toArray()
-            ->shouldReturn([true]);
+        $this->shouldHaveType(BooleanType::class);
     }
 
-    public function it_can_apply_a_callable()
+    public function it_tmp2(BooleanType $bool)
     {
-        $callable = function ($value) {
-            return $value;
-        };
+        $this->beConstructedWith(1);
+        $bool->beConstructedWith([3]);
 
         $this
-            ->apply($callable)
-            ->shouldReturn($this->value());
+            ->hash()
+            ->shouldNotBeEqualTo($bool->hash());
+    }
+
+    public function let()
+    {
+        $this->beConstructedWith(true);
     }
 }

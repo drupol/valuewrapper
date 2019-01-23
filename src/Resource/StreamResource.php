@@ -5,12 +5,12 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper\Resource;
 
 /**
- * Class StreamResource
+ * Class StreamResource.
  */
 class StreamResource extends ResourceValue
 {
     /**
-     * {@inheritdoc
+     * {@inheritdoc.
      */
     public function hash(): string
     {

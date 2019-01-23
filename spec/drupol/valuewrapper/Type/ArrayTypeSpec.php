@@ -9,14 +9,29 @@ use PhpSpec\ObjectBehavior;
 
 class ArrayTypeSpec extends ObjectBehavior
 {
-    public function let()
+    public function it_can_apply_a_callable()
     {
-        $this->beConstructedWith(str_split('hello'));
+        $callable = function ($value) {
+            return $value;
+        };
+
+        $this
+            ->apply($callable)
+            ->shouldReturn($this->value());
     }
 
-    public function it_is_initializable()
+    public function it_can_be_casted_as_an_array()
     {
-        $this->shouldHaveType(ArrayType::class);
+        $this
+            ->__toArray()
+            ->shouldReturn(str_split('hello'));
+    }
+
+    public function it_can_get_the_type()
+    {
+        $this
+            ->type()
+            ->shouldReturn('array');
     }
 
     public function it_can_hash_an_array()
@@ -24,6 +39,13 @@ class ArrayTypeSpec extends ObjectBehavior
         $this
             ->hash()
             ->shouldReturn('a6ebe1b1acaadd9c5f546cee735fd59ad9cc1934');
+    }
+
+    public function it_can_serialize()
+    {
+        $this
+            ->serialize()
+            ->shouldReturn('a:1:{s:5:"value";a:5:{i:0;s:1:"h";i:1;s:1:"e";i:2;s:1:"l";i:3;s:1:"l";i:4;s:1:"o";}}');
     }
 
     public function it_can_throw_an_exception_when_unable_to_encode_to_json()
@@ -35,20 +57,6 @@ class ArrayTypeSpec extends ObjectBehavior
             ->during('hash');
     }
 
-    public function it_can_get_the_type()
-    {
-        $this
-            ->type()
-            ->shouldReturn('array');
-    }
-
-    public function it_can_serialize()
-    {
-        $this
-            ->serialize()
-            ->shouldReturn('a:1:{s:5:"value";a:5:{i:0;s:1:"h";i:1;s:1:"e";i:2;s:1:"l";i:3;s:1:"l";i:4;s:1:"o";}}');
-    }
-
     public function it_can_unserialize()
     {
         $this
@@ -58,21 +66,13 @@ class ArrayTypeSpec extends ObjectBehavior
             ->shouldReturn(str_split('hello'));
     }
 
-    public function it_can_be_casted_as_an_array()
+    public function it_is_initializable()
     {
-        $this
-            ->__toArray()
-            ->shouldReturn(str_split('hello'));
+        $this->shouldHaveType(ArrayType::class);
     }
 
-    public function it_can_apply_a_callable()
+    public function let()
     {
-        $callable = function ($value) {
-            return $value;
-        };
-
-        $this
-            ->apply($callable)
-            ->shouldReturn($this->value());
+        $this->beConstructedWith(str_split('hello'));
     }
 }

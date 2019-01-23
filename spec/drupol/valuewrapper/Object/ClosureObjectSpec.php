@@ -10,25 +10,15 @@ use PhpSpec\ObjectBehavior;
 
 class ClosureObjectSpec extends ObjectBehavior
 {
-    public function let()
+    public function it_can_apply_a_callable()
     {
-        $closure = function (string $who) {
-            return 'hello ' . $who;
+        $callable = function ($value) {
+            return 'hello';
         };
 
-        $this->beConstructedWith($closure);
-    }
-
-    public function it_is_initializable()
-    {
-        $this->shouldHaveType(ClosureObject::class);
-    }
-
-    public function it_can_hash()
-    {
         $this
-            ->hash()
-            ->shouldReturn('8c82b11950d36a2e42bdde11ab2082b2d89f37b9');
+            ->apply($callable)
+            ->shouldReturn('hello');
     }
 
     public function it_can_be_invoked()
@@ -57,6 +47,19 @@ class ClosureObjectSpec extends ObjectBehavior
             ->shouldReturn(false);
     }
 
+    public function it_can_get_its_class()
+    {
+        $this
+            ->class()
+            ->shouldReturn('Closure');
+    }
+
+    public function it_can_hash()
+    {
+        $this
+            ->hash()
+            ->shouldReturn('8c82b11950d36a2e42bdde11ab2082b2d89f37b9');
+    }
 
     public function it_can_serialize()
     {
@@ -74,21 +77,17 @@ class ClosureObjectSpec extends ObjectBehavior
             ->shouldReturn('hello closure');
     }
 
-    public function it_can_get_its_class()
+    public function it_is_initializable()
     {
-        $this
-            ->class()
-            ->shouldReturn('Closure');
+        $this->shouldHaveType(ClosureObject::class);
     }
 
-    public function it_can_apply_a_callable()
+    public function let()
     {
-        $callable = function ($value) {
-            return 'hello';
+        $closure = function (string $who) {
+            return 'hello ' . $who;
         };
 
-        $this
-            ->apply($callable)
-            ->shouldReturn('hello');
+        $this->beConstructedWith($closure);
     }
 }

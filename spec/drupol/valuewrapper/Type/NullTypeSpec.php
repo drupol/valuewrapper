@@ -9,35 +9,22 @@ use PhpSpec\ObjectBehavior;
 
 class NullTypeSpec extends ObjectBehavior
 {
-    public function let()
+    public function it_can_apply_a_callable()
     {
-        $this->beConstructedWith(null);
+        $callable = function ($value) {
+            return $value;
+        };
+
+        $this
+            ->apply($callable)
+            ->shouldReturn($this->value());
     }
 
-    public function it_is_initializable()
-    {
-        $this->shouldHaveType(NullType::class);
-    }
-
-    public function it_can_use_get()
+    public function it_can_be_casted_as_an_array()
     {
         $this
-            ->value()
-            ->shouldBeNull();
-    }
-
-    public function it_can_hash()
-    {
-        $this
-            ->hash()
-            ->shouldReturn('ecf36257fd02e5d2e9d4366eb3da05a1947a75e1');
-    }
-
-    public function it_cannot_work_with_another_type_of_value()
-    {
-        $this
-            ->shouldThrow('\TypeError')
-            ->during('__construct', ['string']);
+            ->__toArray()
+            ->shouldReturn([]);
     }
 
     public function it_can_get_the_type()
@@ -45,6 +32,13 @@ class NullTypeSpec extends ObjectBehavior
         $this
             ->type()
             ->shouldReturn('NULL');
+    }
+
+    public function it_can_hash()
+    {
+        $this
+            ->hash()
+            ->shouldReturn('ecf36257fd02e5d2e9d4366eb3da05a1947a75e1');
     }
 
     public function it_can_serialize()
@@ -63,21 +57,27 @@ class NullTypeSpec extends ObjectBehavior
             ->shouldReturn(null);
     }
 
-    public function it_can_be_casted_as_an_array()
+    public function it_can_use_get()
     {
         $this
-            ->__toArray()
-            ->shouldReturn([]);
+            ->value()
+            ->shouldBeNull();
     }
 
-    public function it_can_apply_a_callable()
+    public function it_cannot_work_with_another_type_of_value()
     {
-        $callable = function ($value) {
-            return $value;
-        };
-
         $this
-            ->apply($callable)
-            ->shouldReturn($this->value());
+            ->shouldThrow('\TypeError')
+            ->during('__construct', ['string']);
+    }
+
+    public function it_is_initializable()
+    {
+        $this->shouldHaveType(NullType::class);
+    }
+
+    public function let()
+    {
+        $this->beConstructedWith(null);
     }
 }

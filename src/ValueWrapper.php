@@ -5,24 +5,10 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper;
 
 /**
- * Class ValueWrapper
+ * Class ValueWrapper.
  */
 class ValueWrapper implements ValueWrapperInterface
 {
-    /**
-     * The storage variable containing the type mappings.
-     *
-     * @var array
-     */
-    public static $typeMappingRegistry = [
-        'string' => \drupol\valuewrapper\Type\StringType::class,
-        'array' => \drupol\valuewrapper\Type\ArrayType::class,
-        'null' => \drupol\valuewrapper\Type\NullType::class,
-        'boolean' => \drupol\valuewrapper\Type\BooleanType::class,
-        'integer' => \drupol\valuewrapper\Type\IntegerType::class,
-        'double' => \drupol\valuewrapper\Type\DoubleType::class,
-    ];
-
     /**
      * The storage variable containing the object mappings.
      *
@@ -50,11 +36,24 @@ class ValueWrapper implements ValueWrapperInterface
     public static $resourceMappingRegistry = [
         'stream' => \drupol\valuewrapper\Resource\StreamResource::class,
     ];
+    /**
+     * The storage variable containing the type mappings.
+     *
+     * @var array
+     */
+    public static $typeMappingRegistry = [
+        'string' => \drupol\valuewrapper\Type\StringType::class,
+        'array' => \drupol\valuewrapper\Type\ArrayType::class,
+        'null' => \drupol\valuewrapper\Type\NullType::class,
+        'boolean' => \drupol\valuewrapper\Type\BooleanType::class,
+        'integer' => \drupol\valuewrapper\Type\IntegerType::class,
+        'double' => \drupol\valuewrapper\Type\DoubleType::class,
+    ];
 
     /**
      * {@inheritdoc}
      */
-    public static function create($value) : ValueInterface
+    public static function create($value): ValueInterface
     {
         return (new self())->make($value);
     }
@@ -62,7 +61,7 @@ class ValueWrapper implements ValueWrapperInterface
     /**
      * {@inheritdoc}
      */
-    public function make($value) : ValueInterface
+    public function make($value): ValueInterface
     {
         $type = $this->getType($value);
 
@@ -78,15 +77,18 @@ class ValueWrapper implements ValueWrapperInterface
                 if (0 === \strpos($type, 'class@anonymous')) {
                     $type = 'Anonymous';
                 }
+
                 break;
 
             case 'resource':
                 $mappings = self::$resourceMappingRegistry;
                 $type = \get_resource_type($value);
+
                 break;
 
             default:
                 $mappings = self::$typeMappingRegistry;
+
                 break;
         }
 
@@ -102,7 +104,7 @@ class ValueWrapper implements ValueWrapperInterface
     /**
      * {@inheritdoc}
      */
-    protected function getType($value) : string
+    protected function getType($value): string
     {
         return \strtolower(\gettype($value));
     }

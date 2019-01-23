@@ -7,7 +7,7 @@ namespace drupol\valuewrapper\Contract;
 use drupol\valuewrapper\ValueInterface;
 
 /**
- * Interface Equalable
+ * Interface Equalable.
  */
 interface Equalable
 {
@@ -16,10 +16,8 @@ interface Equalable
      *
      * @param ValueInterface $item
      *
-     * @param bool $strict
-     *
      * @return bool
-     *   The object's hash.
+     *   The object's hash
      */
-    public function equals(ValueInterface $item, bool $strict = true) : bool;
+    public function equals(ValueInterface $item): bool;
 }

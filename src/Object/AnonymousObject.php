@@ -7,7 +7,7 @@ namespace drupol\valuewrapper\Object;
 use drupol\valuewrapper\Contract\Hashable;
 
 /**
- * Class AnonymousObject
+ * Class AnonymousObject.
  */
 class AnonymousObject extends ObjectValue
 {

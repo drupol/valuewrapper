@@ -8,42 +8,32 @@ use drupol\valuewrapper\AbstractValue;
 use drupol\valuewrapper\ValueInterface;
 
 /**
- * Class TypeValue
+ * Class TypeValue.
  */
 abstract class TypeValue extends AbstractValue implements TypeValueInterface
 {
     /**
      * {@inheritdoc}
      */
+    public function __toArray(): array
+    {
+        return (array) $this->value();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function equals(ValueInterface $item): bool
+    {
+        return $this === $item;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function hash(): string
     {
         return $this->doHash(var_export($this->value(), true));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function doHash(string $string) : string
-    {
-        return parent::doHash($this->type() . $string);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function type() : string
-    {
-        return \gettype($this->value());
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function equals(ValueInterface $item, bool $strict = true) : bool
-    {
-        return ($strict === true) ?
-            $this === $item:
-            $this == $item;
     }
 
     /**
@@ -59,6 +49,14 @@ abstract class TypeValue extends AbstractValue implements TypeValueInterface
     /**
      * {@inheritdoc}
      */
+    public function type(): string
+    {
+        return \gettype($this->value());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function unserialize($serialized)
     {
         $unserialize = \unserialize($serialized);
@@ -69,8 +67,8 @@ abstract class TypeValue extends AbstractValue implements TypeValueInterface
     /**
      * {@inheritdoc}
      */
-    public function __toArray(): array
+    protected function doHash(string $string): string
     {
-        return (array) $this->value();
+        return parent::doHash($this->type() . $string);
     }
 }

@@ -7,7 +7,7 @@ namespace drupol\valuewrapper\Type;
 use drupol\valuewrapper\Contract\Stringable;
 
 /**
- * Class StringType
+ * Class StringType.
  */
 class StringType extends TypeValue implements Stringable
 {
@@ -28,7 +28,7 @@ class StringType extends TypeValue implements Stringable
     {
         return str_split($this->value());
     }
-    
+
     /**
      * {@inheritdoc}
      */

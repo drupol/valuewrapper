@@ -5,10 +5,18 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper\Object;
 
 /**
- * Class StdClassObject
+ * Class StdClassObject.
  */
 class StdClassObject extends ObjectValue
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function hash(): string
+    {
+        throw new \BadMethodCallException('Unable to hash this class.');
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -23,13 +31,5 @@ class StdClassObject extends ObjectValue
     public function unserialize($serialized)
     {
         throw new \BadMethodCallException('Unable to unserialize this class.');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function hash(): string
-    {
-        throw new \BadMethodCallException('Unable to hash this class.');
     }
 }

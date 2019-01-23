@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper;
 
 /**
- * Class AbstractValue
+ * Class AbstractValue.
  */
 abstract class AbstractValue implements ValueInterface
 {
@@ -22,14 +22,6 @@ abstract class AbstractValue implements ValueInterface
     public function __construct($value)
     {
         $this->value = $value;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function value()
-    {
-        return $this->value;
     }
 
     /**
@@ -66,13 +58,21 @@ abstract class AbstractValue implements ValueInterface
     abstract public function unserialize($serialized);
 
     /**
+     * {@inheritdoc}
+     */
+    public function value()
+    {
+        return $this->value;
+    }
+
+    /**
      * @param string $string
-     *   The string to hash.
+     *   The string to hash
      *
      * @return string
-     *   The string's hash.
+     *   The string's hash
      */
-    protected function doHash(string $string) : string
+    protected function doHash(string $string): string
     {
         return \sha1($string);
     }

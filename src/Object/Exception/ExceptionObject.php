@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper\Object\Exception;
 
 /**
- * Class ExceptionObject
+ * Class ExceptionObject.
  */
 class ExceptionObject extends AbstractExceptionObject
 {

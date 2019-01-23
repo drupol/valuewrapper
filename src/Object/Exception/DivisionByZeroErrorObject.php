@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace drupol\valuewrapper\Object\Exception;
 
 /**
- * Class DivisionByZeroErrorObject
+ * Class DivisionByZeroErrorObject.
  */
 class DivisionByZeroErrorObject extends AbstractArithmeticErrorObject
 {
