@@ -76,7 +76,7 @@
 </span><span class="l" id="line-8"><span class="php-keyword1">use</span> drupol\valuewrapper\ValueInterface;
 </span><span class="l" id="line-9">
 </span><span class="l" id="line-10"><span class="php-comment">/**
-</span></span><span class="l" id="line-11"><span class="php-comment"> * Class ResourceValue
+</span></span><span class="l" id="line-11"><span class="php-comment"> * Class ResourceValue.
 </span></span><span class="l" id="line-12"><span class="php-comment"> */</span>
 </span><span class="l" id="line-13"><span class="php-keyword1">abstract</span> <span class="php-keyword1">class</span> ResourceValue <span class="php-keyword1">extends</span> AbstractValue <span class="php-keyword1">implements</span> ResourceValueInterface
 </span><span class="l" id="line-14">{
@@ -87,7 +87,7 @@
 </span></span><span class="l" id="line-19"><span class="php-comment">     */</span>
 </span><span class="l" id="line-20">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(<span class="php-var">$value</span>)
 </span><span class="l" id="line-21">    {
-</span><span class="l" id="line-22">        <span class="php-keyword1">if</span> (<span class="php-keyword1">false</span> == \<span class="php-keyword2">is_resource</span>(<span class="php-var">$value</span>)) {
+</span><span class="l" id="line-22">        <span class="php-keyword1">if</span> (<span class="php-keyword1">false</span> === \<span class="php-keyword2">is_resource</span>(<span class="php-var">$value</span>)) {
 </span><span class="l" id="line-23">            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \TypeError(
 </span><span class="l" id="line-24">                <span class="php-quote">'Argument 1 passed to drupol\valuewrapper\Resource\ResourceValue::__construct()'</span> .
 </span><span class="l" id="line-25">                <span class="php-quote">'must be of the type Resource, '</span> . <span class="php-keyword2">gettype</span>(<span class="php-var">$value</span>) . <span class="php-quote">' given.'</span>
@@ -116,17 +116,17 @@
 </span><span class="l" id="line-48">    <span class="php-comment">/**
 </span></span><span class="l" id="line-49"><span class="php-comment">     * {@inheritdoc}
 </span></span><span class="l" id="line-50"><span class="php-comment">     */</span>
-</span><span class="l" id="line-51">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">unserialize</span>(<span class="php-var">$serialized</span>)
+</span><span class="l" id="line-51">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> type(): string
 </span><span class="l" id="line-52">    {
-</span><span class="l" id="line-53">        <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \ErrorException(<span class="php-quote">'Unsupported method.'</span>);
+</span><span class="l" id="line-53">        <span class="php-keyword1">return</span> \<span class="php-keyword2">get_resource_type</span>(<span class="php-var">$this</span>-&gt;value());
 </span><span class="l" id="line-54">    }
 </span><span class="l" id="line-55">
 </span><span class="l" id="line-56">    <span class="php-comment">/**
 </span></span><span class="l" id="line-57"><span class="php-comment">     * {@inheritdoc}
 </span></span><span class="l" id="line-58"><span class="php-comment">     */</span>
-</span><span class="l" id="line-59">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> type(): string
+</span><span class="l" id="line-59">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">unserialize</span>(<span class="php-var">$serialized</span>)
 </span><span class="l" id="line-60">    {
-</span><span class="l" id="line-61">        <span class="php-keyword1">return</span> \<span class="php-keyword2">get_resource_type</span>(<span class="php-var">$this</span>-&gt;value());
+</span><span class="l" id="line-61">        <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \ErrorException(<span class="php-quote">'Unsupported method.'</span>);
 </span><span class="l" id="line-62">    }
 </span><span class="l" id="line-63">}
 </span><span class="l" id="line-64"></span><br></code></pre>
