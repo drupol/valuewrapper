@@ -22,7 +22,7 @@ abstract class ResourceValue extends AbstractValue implements ResourceValueInter
         if (false === \is_resource($value)) {
             throw new \TypeError(
                 'Argument 1 passed to drupol\valuewrapper\Resource\ResourceValue::__construct()' .
-                'must be of the type Resource, ' . gettype($value) . ' given.'
+                'must be of the type Resource, ' . \gettype($value) . ' given.'
             );
         }
 

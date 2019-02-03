@@ -35,7 +35,7 @@ abstract class AbstractExceptionObject extends ObjectValue
             'class' => $this->class(),
         ];
 
-        return $this->doHash($this->type() . $this->class() . implode('', $data));
+        return $this->doHash($this->type() . $this->class() . \implode('', $data));
     }
 
     /**

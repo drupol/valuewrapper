@@ -25,7 +25,7 @@ abstract class TypeValue extends AbstractValue implements TypeValueInterface
      */
     public function equals(ValueInterface $item): bool
     {
-        return $this === $item;
+        return $this->value() === $item->value();
     }
 
     /**
@@ -33,7 +33,7 @@ abstract class TypeValue extends AbstractValue implements TypeValueInterface
      */
     public function hash(): string
     {
-        return $this->doHash(var_export($this->value(), true));
+        return $this->doHash(\var_export($this->value(), true));
     }
 
     /**

@@ -43,11 +43,11 @@ class StringTypeSpec extends ObjectBehavior
     {
         $this->beConstructedWith('4');
 
-        $string = new StringType('4');
+        $string = new StringType((string) 4);
 
         $this
             ->equals($string)
-            ->shouldReturn(false);
+            ->shouldReturn(true);
     }
 
     public function it_can_get_the_type()

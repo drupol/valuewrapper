@@ -19,7 +19,7 @@ class NullType extends TypeValue
         if (null !== $value) {
             throw new \TypeError(
                 'Argument 1 passed to drupol\valuewrapper\Type\NullType::__construct() must be of the type null, ' .
-                gettype($value) . ' given.'
+                \gettype($value) . ' given.'
             );
         }
 

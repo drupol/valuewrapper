@@ -30,7 +30,7 @@ class StreamResourceSpec extends ObjectBehavior
 
     public function it_can_equals()
     {
-        $res = fopen('build/delete-me.txt', 'w');
+        $res = \fopen('build/delete-me.txt', 'w');
 
         $resource = ValueWrapper::create($res);
 
@@ -65,10 +65,10 @@ class StreamResourceSpec extends ObjectBehavior
 
     public function let()
     {
-        if (!file_exists('build')) {
-            mkdir('build');
+        if (!\file_exists('build')) {
+            \mkdir('build');
         }
-        $resource = fopen('build/delete-me.txt', 'w');
+        $resource = \fopen('build/delete-me.txt', 'w');
 
         $this->beConstructedWith($resource);
     }
