@@ -4,6 +4,25 @@ declare(strict_types = 1);
 
 namespace drupol\valuewrapper;
 
+use drupol\valuewrapper\Object\AnonymousObject;
+use drupol\valuewrapper\Object\ClosureObject;
+use drupol\valuewrapper\Object\DateTimeObject;
+use drupol\valuewrapper\Object\Exception\ArithmeticErrorObject;
+use drupol\valuewrapper\Object\Exception\AssertionErrorObject;
+use drupol\valuewrapper\Object\Exception\DivisionByZeroErrorObject;
+use drupol\valuewrapper\Object\Exception\ErrorObject;
+use drupol\valuewrapper\Object\Exception\ExceptionObject;
+use drupol\valuewrapper\Object\Exception\ParseErrorObject;
+use drupol\valuewrapper\Object\Exception\TypeErrorObject;
+use drupol\valuewrapper\Object\StdClassObject;
+use drupol\valuewrapper\Resource\StreamResource;
+use drupol\valuewrapper\Type\ArrayType;
+use drupol\valuewrapper\Type\BooleanType;
+use drupol\valuewrapper\Type\DoubleType;
+use drupol\valuewrapper\Type\IntegerType;
+use drupol\valuewrapper\Type\NullType;
+use drupol\valuewrapper\Type\StringType;
+
 /**
  * Class ValueWrapper.
  */
@@ -15,17 +34,17 @@ class ValueWrapper implements ValueWrapperInterface
      * @var array
      */
     public static $objectMappingRegistry = [
-        'stdClass' => \drupol\valuewrapper\Object\StdClassObject::class,
-        'Anonymous' => \drupol\valuewrapper\Object\AnonymousObject::class,
-        'Closure' => \drupol\valuewrapper\Object\ClosureObject::class,
-        'DateTime' => \drupol\valuewrapper\Object\DateTimeObject::class,
-        'Exception' => \drupol\valuewrapper\Object\Exception\ExceptionObject::class,
-        'Error' => \drupol\valuewrapper\Object\Exception\ErrorObject::class,
-        'TypeError' => \drupol\valuewrapper\Object\Exception\TypeErrorObject::class,
-        'ArithmeticError' => \drupol\valuewrapper\Object\Exception\ArithmeticErrorObject::class,
-        'AssertionError' => \drupol\valuewrapper\Object\Exception\AssertionErrorObject::class,
-        'DivisionByZeroError' => \drupol\valuewrapper\Object\Exception\DivisionByZeroErrorObject::class,
-        'ParseError' => \drupol\valuewrapper\Object\Exception\ParseErrorObject::class,
+        'stdClass' => StdClassObject::class,
+        'Anonymous' => AnonymousObject::class,
+        'Closure' => ClosureObject::class,
+        'DateTime' => DateTimeObject::class,
+        'Exception' => ExceptionObject::class,
+        'Error' => ErrorObject::class,
+        'TypeError' => TypeErrorObject::class,
+        'ArithmeticError' => ArithmeticErrorObject::class,
+        'AssertionError' => AssertionErrorObject::class,
+        'DivisionByZeroError' => DivisionByZeroErrorObject::class,
+        'ParseError' => ParseErrorObject::class,
     ];
 
     /**
@@ -34,7 +53,7 @@ class ValueWrapper implements ValueWrapperInterface
      * @var array
      */
     public static $resourceMappingRegistry = [
-        'stream' => \drupol\valuewrapper\Resource\StreamResource::class,
+        'stream' => StreamResource::class,
     ];
     /**
      * The storage variable containing the type mappings.
@@ -42,12 +61,12 @@ class ValueWrapper implements ValueWrapperInterface
      * @var array
      */
     public static $typeMappingRegistry = [
-        'string' => \drupol\valuewrapper\Type\StringType::class,
-        'array' => \drupol\valuewrapper\Type\ArrayType::class,
-        'null' => \drupol\valuewrapper\Type\NullType::class,
-        'boolean' => \drupol\valuewrapper\Type\BooleanType::class,
-        'integer' => \drupol\valuewrapper\Type\IntegerType::class,
-        'double' => \drupol\valuewrapper\Type\DoubleType::class,
+        'string' => StringType::class,
+        'array' => ArrayType::class,
+        'null' => NullType::class,
+        'boolean' => BooleanType::class,
+        'integer' => IntegerType::class,
+        'double' => DoubleType::class,
     ];
 
     /**
