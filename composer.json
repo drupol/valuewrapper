@@ -20,9 +20,7 @@
         "jeremeamia/superclosure": "^2"
     },
     "require-dev": {
-        "apigen/apigen": "dev-master#85290e8",
         "drupol/php-conventions": "^1",
-        "roave/better-reflection": "dev-master#0009c64",
         "scrutinizer/ocular": "^1"
     },
     "config": {
@@ -44,7 +42,6 @@
         }
     },
     "scripts": {
-        "apigen": "./vendor/bin/apigen generate src --destination build/docs",
         "bench": "./vendor/bin/phpbench run --report=project --store --precision=3",
         "grumphp": "./vendor/bin/grumphp run",
         "infection": "./vendor/bin/infection run -j 10",

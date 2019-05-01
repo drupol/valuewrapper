@@ -22,17 +22,7 @@ script:
 after_success:
 - phpenv config-rm xdebug.ini
 - composer scrutinizer
-- composer apigen
 
 env:
   global:
     secure: eJMN1pzsXNQFWHdlBjBqpX6JUOA/OIhcEFDBgjaJaSXKR6JDYACa+bMOgL/eWldgCieKDDSLuwEZuXoDgnnUahUW3F2+LPTixq5rsDB8kG077armjuopmB5vwo4JznPl8OWOElEFn+Ouf5CVOamG9JNU+LhYYWDvLg3uffCC3uWIg1d+4XhEIiuJFFpNgwxRWLrBi+SpbkswCPeBa0SvuHTPFeHdMJfk9Jfq9gygbqVfB37SMAabp00dbGJPcwvfDeUpjfPEfulb86gSS6rmjzppMW+2l7FnyH25e69pYL3Mp3euyza3DluscJ1c1bTypJNJgaFRfgO82xvvu5IiHiiC5W7iu4tD9fskhFRTp7PZh7vd2zMJFbmdtVWRci2Yr+8JPpCtVAfwGTuaTd30NstBDMPiJbTd3mHGr8KFP32R+63tNZQWbah1zBN6vlOex4noQx9QjVUkBWgxU4/X1K5m0vSvCjHfNBNHqBB7VzGDdF6k1jyWSreOq1FAzgRgOs2BWvcqCbski/D7vLtXrpVaGONfQfVxpsj5lyBmhOElhn9VYxvI/SqWjuWSuWkYissQktLQnXKqupIi/r4XS/CBoT64FeJAM9Iemz+OL4iKh2gke2yeFW5PsEUgXW5J3rl34ziAhM2lLCEP7C7bx3OOVyq0HkOFxMfazK0bisM=
-
-deploy:
-  local-dir: build/docs
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  keep-history: true
-  on:
-    branch: master
