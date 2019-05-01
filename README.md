@@ -1,5 +1,6 @@
 [![Latest Stable Version](https://poser.pugx.org/drupol/valuewrapper/v/stable)](https://packagist.org/packages/drupol/valuewrapper)
  [![Total Downloads](https://poser.pugx.org/drupol/valuewrapper/downloads)](https://packagist.org/packages/drupol/valuewrapper)
+ [![GitHub stars](https://img.shields.io/github/stars/drupol/valuewrapper.svg?style=flat-square)](https://packagist.org/packages/drupol/valuewrapper)
  [![Build Status](https://travis-ci.org/drupol/valuewrapper.svg?branch=master)](https://travis-ci.org/drupol/valuewrapper)
  [![Build status](https://ci.appveyor.com/api/projects/status/grvr1tfq9uoth0rg?svg=true)](https://ci.appveyor.com/project/drupol/valuewrapper)
  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/drupol/valuewrapper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/drupol/valuewrapper/?branch=master)
