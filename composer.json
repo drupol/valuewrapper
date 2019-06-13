@@ -21,9 +21,16 @@
     },
     "require-dev": {
         "drupol/php-conventions": "^1",
+        "drupol/phpspec-annotation": "^1",
+        "infection/infection": "^0.12",
+        "leanphp/phpspec-code-coverage": "^4",
+        "phpspec/phpspec": "^4",
         "scrutinizer/ocular": "^1"
     },
     "config": {
+        "platform": {
+            "php": "7.1.28"
+        },
         "sort-packages": true
     },
     "extra": {
