@@ -1,13 +1,15 @@
-[![Latest Stable Version](https://poser.pugx.org/drupol/valuewrapper/v/stable)](https://packagist.org/packages/drupol/valuewrapper)
- [![Total Downloads](https://poser.pugx.org/drupol/valuewrapper/downloads)](https://packagist.org/packages/drupol/valuewrapper)
+[![Latest Stable Version](https://img.shields.io/packagist/v/drupol/valuewrapper.svg?style=flat-square)](https://packagist.org/packages/drupol/valuewrapper)
  [![GitHub stars](https://img.shields.io/github/stars/drupol/valuewrapper.svg?style=flat-square)](https://packagist.org/packages/drupol/valuewrapper)
- [![Build Status](https://travis-ci.org/drupol/valuewrapper.svg?branch=master)](https://travis-ci.org/drupol/valuewrapper)
- [![Build status](https://ci.appveyor.com/api/projects/status/grvr1tfq9uoth0rg?svg=true)](https://ci.appveyor.com/project/drupol/valuewrapper)
- [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/drupol/valuewrapper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/drupol/valuewrapper/?branch=master)
- [![Code Coverage](https://scrutinizer-ci.com/g/drupol/valuewrapper/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/drupol/valuewrapper/?branch=master)
+ [![Total Downloads](https://img.shields.io/packagist/dt/drupol/valuewrapper.svg?style=flat-square)](https://packagist.org/packages/drupol/valuewrapper)
+ [![Build Status](https://img.shields.io/travis/drupol/valuewrapper/master.svg?style=flat-square)](https://travis-ci.org/drupol/valuewrapper)
+ [![Build Status](https://img.shields.io/appveyor/ci/drupol/valuewrapper.svg?style=flat-square)](https://ci.appveyor.com/project/drupol/valuewrapper)
+ [![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/drupol/valuewrapper/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/drupol/valuewrapper/?branch=master)
+ [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/drupol/valuewrapper/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/drupol/valuewrapper/?branch=master)
  [![Mutation testing badge](https://badge.stryker-mutator.io/github.com/drupol/valuewrapper/master)](https://stryker-mutator.github.io)
- [![License](https://poser.pugx.org/drupol/valuewrapper/license)](https://packagist.org/packages/drupol/valuewrapper)
-
+ [![License](https://img.shields.io/packagist/l/drupol/valuewrapper.svg?style=flat-square)](https://packagist.org/packages/drupol/valuewrapper)
+ [![Say Thanks!](https://img.shields.io/badge/Say-thanks-brightgreen.svg?style=flat-square)](https://saythanks.io/to/drupol)
+ [![Donate!](https://img.shields.io/badge/Donate-Paypal-brightgreen.svg?style=flat-square)](https://paypal.me/drupol)
+ 
 # ValueWrapper
 
 ## Description
