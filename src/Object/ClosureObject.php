@@ -61,8 +61,12 @@ class ClosureObject extends ObjectValue
     {
         $unserialized = \unserialize($serialized);
 
-        $this->set(
-            $this->serializer->unserialize(\base64_decode($unserialized['value'], true))
-        );
+        $decoded = \base64_decode($unserialized['value'], true);
+
+        if (\is_string($decoded)) {
+            $this->set(
+                $this->serializer->unserialize($decoded)
+            );
+        }
     }
 }
