@@ -1,11 +1,13 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Type;
 
 use drupol\valuewrapper\AbstractValue;
 use drupol\valuewrapper\ValueInterface;
+
+use function gettype;
 
 /**
  * Class TypeValue.
@@ -33,7 +35,7 @@ abstract class TypeValue extends AbstractValue implements TypeValueInterface
      */
     public function hash(): string
     {
-        return $this->doHash(\var_export($this->value(), true));
+        return $this->doHash(var_export($this->value(), true));
     }
 
     /**
@@ -41,7 +43,7 @@ abstract class TypeValue extends AbstractValue implements TypeValueInterface
      */
     public function serialize()
     {
-        return \serialize([
+        return serialize([
             'value' => $this->value(),
         ]);
     }
@@ -51,7 +53,7 @@ abstract class TypeValue extends AbstractValue implements TypeValueInterface
      */
     public function type(): string
     {
-        return \gettype($this->value());
+        return gettype($this->value());
     }
 
     /**
@@ -59,7 +61,7 @@ abstract class TypeValue extends AbstractValue implements TypeValueInterface
      */
     public function unserialize($serialized)
     {
-        $unserialize = \unserialize($serialized);
+        $unserialize = unserialize($serialized);
 
         $this->set($unserialize['value']);
     }

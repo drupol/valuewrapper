@@ -1,8 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Object;
+
+use BadMethodCallException;
 
 /**
  * Class StdClassObject.
@@ -14,7 +16,7 @@ class StdClassObject extends ObjectValue
      */
     public function hash(): string
     {
-        throw new \BadMethodCallException('Unable to hash this class.');
+        throw new BadMethodCallException('Unable to hash this class.');
     }
 
     /**
@@ -22,7 +24,7 @@ class StdClassObject extends ObjectValue
      */
     public function serialize()
     {
-        throw new \BadMethodCallException('Unable to serialize this class.');
+        throw new BadMethodCallException('Unable to serialize this class.');
     }
 
     /**
@@ -30,6 +32,6 @@ class StdClassObject extends ObjectValue
      */
     public function unserialize($serialized)
     {
-        throw new \BadMethodCallException('Unable to unserialize this class.');
+        throw new BadMethodCallException('Unable to unserialize this class.');
     }
 }

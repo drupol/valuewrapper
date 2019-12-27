@@ -1,11 +1,13 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Object;
 
 use drupol\valuewrapper\AbstractValue;
 use drupol\valuewrapper\ValueInterface;
+
+use function get_class;
 
 /**
  * Class ObjectValue.
@@ -27,7 +29,7 @@ abstract class ObjectValue extends AbstractValue implements ObjectValueInterface
      */
     public function class(): string
     {
-        return \get_class($this->value());
+        return get_class($this->value());
     }
 
     /**

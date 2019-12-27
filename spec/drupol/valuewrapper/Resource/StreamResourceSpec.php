@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace spec\drupol\valuewrapper\Resource;
 
@@ -12,7 +12,7 @@ class StreamResourceSpec extends ObjectBehavior
 {
     public function it_can_apply_a_callable()
     {
-        $callable = function ($value) {
+        $callable = static function ($value) {
             return 'hello';
         };
 
@@ -30,7 +30,7 @@ class StreamResourceSpec extends ObjectBehavior
 
     public function it_can_equals()
     {
-        $res = \fopen('build/delete-me.txt', 'w');
+        $res = fopen('build/delete-me.txt', 'wb');
 
         $resource = ValueWrapper::create($res);
 
@@ -41,7 +41,7 @@ class StreamResourceSpec extends ObjectBehavior
     {
         $this
             ->hash()
-            ->shouldReturn('deac58c179089c7b481bf69219a8d9348b8062bb');
+            ->shouldReturn('bc83fa2f33cd54d1dfd308ed1d64389858033d28');
     }
 
     public function it_can_serialize()
@@ -65,10 +65,10 @@ class StreamResourceSpec extends ObjectBehavior
 
     public function let()
     {
-        if (!\file_exists('build')) {
-            \mkdir('build');
+        if (!file_exists('build')) {
+            mkdir('build');
         }
-        $resource = \fopen('build/delete-me.txt', 'w');
+        $resource = fopen('build/delete-me.txt', 'wb');
 
         $this->beConstructedWith($resource);
     }

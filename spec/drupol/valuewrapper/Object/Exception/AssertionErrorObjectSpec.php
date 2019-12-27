@@ -1,9 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace spec\drupol\valuewrapper\Object\Exception;
 
+use AssertionError;
 use drupol\valuewrapper\Object\Exception\AssertionErrorObject;
 use drupol\valuewrapper\ValueWrapper;
 use PhpSpec\ObjectBehavior;
@@ -29,7 +30,7 @@ class AssertionErrorObjectSpec extends ObjectBehavior
         $this
             ->unserialize('a:1:{s:5:"value";a:3:{s:7:"message";s:12:"Hello world!";s:4:"code";i:404;s:5:"class";s:14:"AssertionError";}}');
 
-        $exception = ValueWrapper::create(new \AssertionError('Hello world!', 404));
+        $exception = ValueWrapper::create(new AssertionError('Hello world!', 404));
 
         $this
             ->equals($exception)
@@ -43,7 +44,7 @@ class AssertionErrorObjectSpec extends ObjectBehavior
 
     public function let()
     {
-        $exception = new \AssertionError('Hello world!', 404);
+        $exception = new AssertionError('Hello world!', 404);
 
         $this->beConstructedWith($exception);
     }

@@ -1,16 +1,17 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper;
 
 use drupol\valuewrapper\Contract\Equalable;
 use drupol\valuewrapper\Contract\Hashable;
+use Serializable;
 
 /**
  * Interface ValueInterface.
  */
-interface ValueInterface extends Hashable, Equalable, \Serializable
+interface ValueInterface extends Equalable, Hashable, Serializable
 {
     /**
      * Apply a callable to the value.

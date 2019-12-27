@@ -1,8 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Object;
+
+use DateTime;
 
 /**
  * Class DateTimeObject.
@@ -12,9 +14,9 @@ class DateTimeObject extends ObjectValue
     /**
      * DateTimeObject constructor.
      *
-     * @param \DateTime $value
+     * @param DateTime $value
      */
-    public function __construct(\DateTime $value)
+    public function __construct(DateTime $value)
     {
         parent::__construct($value);
     }
@@ -32,7 +34,7 @@ class DateTimeObject extends ObjectValue
      */
     public function serialize()
     {
-        return \serialize([
+        return serialize([
             'value' => $this->value()->getTimestamp(),
         ]);
     }
@@ -42,10 +44,10 @@ class DateTimeObject extends ObjectValue
      */
     public function unserialize($serialized)
     {
-        $unserialize = \unserialize($serialized);
+        $unserialize = unserialize($serialized);
 
         $this->set(
-            (new \DateTime())->setTimestamp($unserialize['value'])
+            (new DateTime())->setTimestamp($unserialize['value'])
         );
     }
 }

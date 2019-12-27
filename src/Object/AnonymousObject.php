@@ -1,10 +1,12 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Object;
 
+use BadMethodCallException;
 use drupol\valuewrapper\Contract\Hashable;
+use Exception;
 
 /**
  * Class AnonymousObject.
@@ -20,7 +22,7 @@ class AnonymousObject extends ObjectValue
             return $this->doHash($this->type() . $this->value()->hash());
         }
 
-        throw new \Exception('The anonymous class must implement Hashable interface.');
+        throw new Exception('The anonymous class must implement Hashable interface.');
     }
 
     /**
@@ -28,7 +30,7 @@ class AnonymousObject extends ObjectValue
      */
     public function serialize()
     {
-        throw new \BadMethodCallException('Unable to serialize this class.');
+        throw new BadMethodCallException('Unable to serialize this class.');
     }
 
     /**
@@ -36,6 +38,6 @@ class AnonymousObject extends ObjectValue
      */
     public function unserialize($serialized)
     {
-        throw new \BadMethodCallException('Unable to unserialize this class.');
+        throw new BadMethodCallException('Unable to unserialize this class.');
     }
 }

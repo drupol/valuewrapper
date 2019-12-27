@@ -1,11 +1,12 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace spec\drupol\valuewrapper\Object\Exception;
 
 use drupol\valuewrapper\Object\Exception\ParseErrorObject;
 use drupol\valuewrapper\ValueWrapper;
+use ParseError;
 use PhpSpec\ObjectBehavior;
 
 class ParseErrorObjectSpec extends ObjectBehavior
@@ -29,7 +30,7 @@ class ParseErrorObjectSpec extends ObjectBehavior
         $this
             ->unserialize('a:1:{s:5:"value";a:3:{s:7:"message";s:12:"Hello world!";s:4:"code";i:404;s:5:"class";s:10:"ParseError";}}');
 
-        $exception = ValueWrapper::create(new \ParseError('Hello world!', 404));
+        $exception = ValueWrapper::create(new ParseError('Hello world!', 404));
 
         $this
             ->equals($exception)
@@ -43,7 +44,7 @@ class ParseErrorObjectSpec extends ObjectBehavior
 
     public function let()
     {
-        $exception = new \ParseError('Hello world!', 404);
+        $exception = new ParseError('Hello world!', 404);
 
         $this->beConstructedWith($exception);
     }

@@ -1,10 +1,15 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Object;
 
+use Closure;
 use SuperClosure\Serializer;
+
+use function call_user_func_array;
+use function func_get_args;
+use function is_string;
 
 /**
  * Class ClosureObject.
@@ -19,9 +24,9 @@ class ClosureObject extends ObjectValue
     /**
      * ClosureObject constructor.
      *
-     * @param \Closure $value
+     * @param Closure $value
      */
-    public function __construct(\Closure $value)
+    public function __construct(Closure $value)
     {
         parent::__construct($value);
 
@@ -33,7 +38,7 @@ class ClosureObject extends ObjectValue
      */
     public function __invoke()
     {
-        return \call_user_func_array($this->value(), \func_get_args());
+        return call_user_func_array($this->value(), func_get_args());
     }
 
     /**
@@ -49,8 +54,8 @@ class ClosureObject extends ObjectValue
      */
     public function serialize()
     {
-        return \serialize([
-            'value' => \base64_encode($this->serializer->serialize($this->value())),
+        return serialize([
+            'value' => base64_encode($this->serializer->serialize($this->value())),
         ]);
     }
 
@@ -59,11 +64,11 @@ class ClosureObject extends ObjectValue
      */
     public function unserialize($serialized)
     {
-        $unserialized = \unserialize($serialized);
+        $unserialized = unserialize($serialized);
 
-        $decoded = \base64_decode($unserialized['value'], true);
+        $decoded = base64_decode($unserialized['value'], true);
 
-        if (\is_string($decoded)) {
+        if (is_string($decoded)) {
             $this->set(
                 $this->serializer->unserialize($decoded)
             );

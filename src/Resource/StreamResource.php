@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Resource;
 
@@ -15,7 +15,7 @@ class StreamResource extends ResourceValue
     public function hash(): string
     {
         return $this->doHash(
-            $this->type() . \implode('', \stream_get_meta_data($this->value()))
+            $this->type() . implode('', stream_get_meta_data($this->value()))
         );
     }
 }

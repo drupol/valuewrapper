@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper;
 
@@ -22,6 +22,10 @@ use drupol\valuewrapper\Type\DoubleType;
 use drupol\valuewrapper\Type\IntegerType;
 use drupol\valuewrapper\Type\NullType;
 use drupol\valuewrapper\Type\StringType;
+use OutOfBoundsException;
+
+use function get_class;
+use function gettype;
 
 /**
  * Class ValueWrapper.
@@ -31,7 +35,7 @@ class ValueWrapper implements ValueWrapperInterface
     /**
      * The storage variable containing the object mappings.
      *
-     * @var array
+     * @var array<string, string>
      */
     public static $objectMappingRegistry = [
         'stdClass' => StdClassObject::class,
@@ -50,15 +54,16 @@ class ValueWrapper implements ValueWrapperInterface
     /**
      * The storage variable containing the resource mappings.
      *
-     * @var array
+     * @var array<string, string>
      */
     public static $resourceMappingRegistry = [
         'stream' => StreamResource::class,
     ];
+
     /**
      * The storage variable containing the type mappings.
      *
-     * @var array
+     * @var array<string, string>
      */
     public static $typeMappingRegistry = [
         'string' => StringType::class,
@@ -91,17 +96,16 @@ class ValueWrapper implements ValueWrapperInterface
                 }
 
                 $mappings = self::$objectMappingRegistry;
-                $type = \get_class($value);
+                $type = get_class($value);
 
-                if (0 === \strpos($type, 'class@anonymous')) {
+                if (0 === mb_strpos($type, 'class@anonymous')) {
                     $type = 'Anonymous';
                 }
 
                 break;
-
             case 'resource':
                 $mappings = self::$resourceMappingRegistry;
-                $type = \get_resource_type($value);
+                $type = get_resource_type($value);
 
                 break;
 
@@ -115,16 +119,18 @@ class ValueWrapper implements ValueWrapperInterface
             return new $mappings[$type]($value);
         }
 
-        throw new \OutOfBoundsException(
-            \sprintf('Unable to find a wrapping class for value type "%s".', $type)
+        throw new OutOfBoundsException(
+            sprintf('Unable to find a wrapping class for value type "%s".', $type)
         );
     }
 
     /**
-     * {@inheritdoc}
+     * @param mixed $value
+     *
+     * @return string
      */
     protected function getType($value): string
     {
-        return \strtolower(\gettype($value));
+        return mb_strtolower(gettype($value));
     }
 }

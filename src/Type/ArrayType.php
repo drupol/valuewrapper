@@ -1,8 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Type;
+
+use Exception;
 
 /**
  * Class ArrayType.
@@ -12,7 +14,7 @@ class ArrayType extends TypeValue
     /**
      * ArrayType constructor.
      *
-     * @param array $value
+     * @param array<mixed> $value
      */
     public function __construct(array $value)
     {
@@ -24,10 +26,10 @@ class ArrayType extends TypeValue
      */
     public function hash(): string
     {
-        if ($string = \json_encode($this->value())) {
+        if ($string = json_encode($this->value())) {
             return $this->doHash($string);
         }
 
-        throw new \Exception('Unable to encode the value.');
+        throw new Exception('Unable to encode the value.');
     }
 }

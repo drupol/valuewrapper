@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Type;
 
@@ -10,7 +10,7 @@ use drupol\valuewrapper\ValueInterface;
 /**
  * Interface TypeValueInterface.
  */
-interface TypeValueInterface extends ValueInterface, Arrayable
+interface TypeValueInterface extends Arrayable, ValueInterface
 {
     /**
      * {@inheritdoc}

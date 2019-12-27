@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Type;
 
@@ -26,7 +26,7 @@ class StringType extends TypeValue implements Stringable
      */
     public function __toArray(): array
     {
-        return \str_split($this->value());
+        return str_split($this->value());
     }
 
     /**

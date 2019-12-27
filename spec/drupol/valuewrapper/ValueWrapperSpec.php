@@ -1,12 +1,13 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace spec\drupol\valuewrapper;
 
 use drupol\valuewrapper\Type\StringType;
 use drupol\valuewrapper\ValueWrapper;
 use PhpSpec\ObjectBehavior;
+use StdClass;
 
 class ValueWrapperSpec extends ObjectBehavior
 {
@@ -25,7 +26,7 @@ class ValueWrapperSpec extends ObjectBehavior
 
     public function it_should_create_an_object_with_a_closure()
     {
-        $closure = function () {
+        $closure = static function () {
         };
 
         $this->make($closure)
@@ -50,7 +51,7 @@ class ValueWrapperSpec extends ObjectBehavior
 
     public function it_should_create_an_object_with_a_resource()
     {
-        $resource = \tmpfile();
+        $resource = tmpfile();
 
         $this->make($resource)
             ->shouldBeAnInstanceOf('drupol\valuewrapper\Resource\StreamResource');
@@ -58,7 +59,7 @@ class ValueWrapperSpec extends ObjectBehavior
 
     public function it_should_create_an_object_with_a_standard_object()
     {
-        $stdclass = new \StdClass();
+        $stdclass = new StdClass();
 
         $this->make($stdclass)
             ->shouldBeAnInstanceOf('drupol\valuewrapper\Object\StdClassObject');
@@ -99,7 +100,7 @@ class ValueWrapperSpec extends ObjectBehavior
 
     public function it_should_create_an_object_with_an_object()
     {
-        $object = new \stdClass();
+        $object = new stdClass();
 
         $this->make($object)
             ->shouldBeAnInstanceOf('drupol\valuewrapper\Object\ObjectValue');

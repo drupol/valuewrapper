@@ -1,8 +1,12 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Type;
+
+use TypeError;
+
+use function gettype;
 
 /**
  * Class NullType.
@@ -17,9 +21,9 @@ class NullType extends TypeValue
     public function __construct($value)
     {
         if (null !== $value) {
-            throw new \TypeError(
+            throw new TypeError(
                 'Argument 1 passed to drupol\valuewrapper\Type\NullType::__construct() must be of the type null, ' .
-                \gettype($value) . ' given.'
+                gettype($value) . ' given.'
             );
         }
 

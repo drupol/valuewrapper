@@ -1,8 +1,7 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/drupol/valuewrapper.svg?style=flat-square)](https://packagist.org/packages/drupol/valuewrapper)
  [![GitHub stars](https://img.shields.io/github/stars/drupol/valuewrapper.svg?style=flat-square)](https://packagist.org/packages/drupol/valuewrapper)
  [![Total Downloads](https://img.shields.io/packagist/dt/drupol/valuewrapper.svg?style=flat-square)](https://packagist.org/packages/drupol/valuewrapper)
- [![Build Status](https://img.shields.io/travis/drupol/valuewrapper/master.svg?style=flat-square)](https://travis-ci.org/drupol/valuewrapper)
- [![Build Status](https://img.shields.io/appveyor/ci/drupol/valuewrapper.svg?style=flat-square)](https://ci.appveyor.com/project/drupol/valuewrapper)
+ [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/drupol/valuewrapper/Continuous%20Integration?style=flat-square)](https://github.com/drupol/valuewrapper/actions)
  [![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/drupol/valuewrapper/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/drupol/valuewrapper/?branch=master)
  [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/drupol/valuewrapper/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/drupol/valuewrapper/?branch=master)
  [![Mutation testing badge](https://badge.stryker-mutator.io/github.com/drupol/valuewrapper/master)](https://stryker-mutator.github.io)
@@ -18,7 +17,7 @@ This library allows you to wrap PHP variable in a strict typed PHP object.
 
 ## Documentation
 
-API documentation is automatically generated with [APIGen](https://github.com/ApiGen/ApiGen) and available at [this address](https://not-a-number.io/valuewrapper/).
+TODO.
 
 ## Requirements
 
@@ -54,7 +53,7 @@ $value->equals($sameValue); // Return true.
 
 ## Code quality and tests
 
-Every time changes are introduced into the library, [Travis CI](https://travis-ci.org/drupol/valuewrapper/builds) run the tests.
+Every time changes are introduced into the library, [Github](https://github.com/drupol/valuewrapper/actions) run the tests.
 
 The library has tests written with [PHPSpec](http://www.phpspec.net/).
 

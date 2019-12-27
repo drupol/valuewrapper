@@ -1,8 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Object\Exception;
+
+use ParseError;
 
 /**
  * Class ParseErrorObject.
@@ -12,9 +14,9 @@ class ParseErrorObject extends AbstractExceptionObject
     /**
      * ParseErrorObject constructor.
      *
-     * @param \ParseError $value
+     * @param ParseError $value
      */
-    public function __construct(\ParseError $value)
+    public function __construct(ParseError $value)
     {
         parent::__construct($value);
     }

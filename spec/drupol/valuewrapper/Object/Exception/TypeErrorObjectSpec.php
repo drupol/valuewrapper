@@ -1,12 +1,13 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace spec\drupol\valuewrapper\Object\Exception;
 
 use drupol\valuewrapper\Object\Exception\TypeErrorObject;
 use drupol\valuewrapper\ValueWrapper;
 use PhpSpec\ObjectBehavior;
+use TypeError;
 
 class TypeErrorObjectSpec extends ObjectBehavior
 {
@@ -29,7 +30,7 @@ class TypeErrorObjectSpec extends ObjectBehavior
         $this
             ->unserialize('a:1:{s:5:"value";a:3:{s:7:"message";s:12:"Hello world!";s:4:"code";i:404;s:5:"class";s:9:"TypeError";}}');
 
-        $exception = ValueWrapper::create(new \TypeError('Hello world!', 404));
+        $exception = ValueWrapper::create(new TypeError('Hello world!', 404));
 
         $this
             ->equals($exception)
@@ -43,7 +44,7 @@ class TypeErrorObjectSpec extends ObjectBehavior
 
     public function let()
     {
-        $exception = new \TypeError('Hello world!', 404);
+        $exception = new TypeError('Hello world!', 404);
 
         $this->beConstructedWith($exception);
     }

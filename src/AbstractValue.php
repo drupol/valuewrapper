@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper;
 
@@ -25,7 +25,7 @@ abstract class AbstractValue implements ValueInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @return mixed
      */
     public function __invoke()
     {
@@ -48,12 +48,14 @@ abstract class AbstractValue implements ValueInterface
     abstract public function hash(): string;
 
     /**
-     * {@inheritdoc}
+     * @return string
      */
     abstract public function serialize();
 
     /**
-     * {@inheritdoc}
+     * @param string $serialized
+     *
+     * @return mixed
      */
     abstract public function unserialize($serialized);
 
@@ -74,7 +76,7 @@ abstract class AbstractValue implements ValueInterface
      */
     protected function doHash(string $string): string
     {
-        return \sha1($string);
+        return sha1($string);
     }
 
     /**

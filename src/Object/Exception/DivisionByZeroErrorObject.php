@@ -1,8 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Object\Exception;
+
+use DivisionByZeroError;
 
 /**
  * Class DivisionByZeroErrorObject.
@@ -12,9 +14,9 @@ class DivisionByZeroErrorObject extends AbstractArithmeticErrorObject
     /**
      * DivisionByZeroErrorObject constructor.
      *
-     * @param \DivisionByZeroError $value
+     * @param DivisionByZeroError $value
      */
-    public function __construct(\DivisionByZeroError $value)
+    public function __construct(DivisionByZeroError $value)
     {
         parent::__construct($value);
     }

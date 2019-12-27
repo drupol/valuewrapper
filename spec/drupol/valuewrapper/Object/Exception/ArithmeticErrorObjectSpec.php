@@ -1,9 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace spec\drupol\valuewrapper\Object\Exception;
 
+use ArithmeticError;
 use drupol\valuewrapper\Object\Exception\ArithmeticErrorObject;
 use drupol\valuewrapper\ValueWrapper;
 use PhpSpec\ObjectBehavior;
@@ -29,7 +30,7 @@ class ArithmeticErrorObjectSpec extends ObjectBehavior
         $this
             ->unserialize('a:1:{s:5:"value";a:3:{s:7:"message";s:12:"Hello world!";s:4:"code";i:404;s:5:"class";s:15:"ArithmeticError";}}');
 
-        $exception = ValueWrapper::create(new \ArithmeticError('Hello world!', 404));
+        $exception = ValueWrapper::create(new ArithmeticError('Hello world!', 404));
 
         $this
             ->equals($exception)
@@ -43,7 +44,7 @@ class ArithmeticErrorObjectSpec extends ObjectBehavior
 
     public function let()
     {
-        $exception = new \ArithmeticError('Hello world!', 404);
+        $exception = new ArithmeticError('Hello world!', 404);
 
         $this->beConstructedWith($exception);
     }

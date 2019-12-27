@@ -1,10 +1,13 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace drupol\valuewrapper\Object\Exception;
 
 use drupol\valuewrapper\Object\ObjectValue;
+use ReflectionClass;
+use Throwable;
+use TypeError;
 
 /**
  * Class AbstractExceptionObject.
@@ -14,9 +17,9 @@ abstract class AbstractExceptionObject extends ObjectValue
     /**
      * AbstractExceptionObject constructor.
      *
-     * @param \Throwable $value
+     * @param Throwable $value
      */
-    public function __construct(\Throwable $value)
+    public function __construct(Throwable $value)
     {
         parent::__construct($value);
     }
@@ -26,7 +29,7 @@ abstract class AbstractExceptionObject extends ObjectValue
      */
     public function hash(): string
     {
-        /** @var \TypeError $value */
+        /** @var TypeError $value */
         $value = $this->value();
 
         $data = [
@@ -35,7 +38,7 @@ abstract class AbstractExceptionObject extends ObjectValue
             'class' => $this->class(),
         ];
 
-        return $this->doHash($this->type() . $this->class() . \implode('', $data));
+        return $this->doHash($this->type() . $this->class() . implode('', $data));
     }
 
     /**
@@ -43,7 +46,7 @@ abstract class AbstractExceptionObject extends ObjectValue
      */
     public function serialize()
     {
-        return \serialize([
+        return serialize([
             'value' => [
                 'message' => $this->value()->getMessage(),
                 'code' => $this->value()->getCode(),
@@ -57,9 +60,9 @@ abstract class AbstractExceptionObject extends ObjectValue
      */
     public function unserialize($serialized)
     {
-        $unserialize = \unserialize($serialized);
+        $unserialize = unserialize($serialized);
 
-        $reflection = new \ReflectionClass($unserialize['value']['class']);
+        $reflection = new ReflectionClass($unserialize['value']['class']);
 
         $this->set(
             ($reflection->newInstanceArgs([$unserialize['value']['message'], $unserialize['value']['code']]))

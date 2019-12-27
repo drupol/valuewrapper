@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace spec\drupol\valuewrapper\Type;
 
@@ -11,7 +11,7 @@ class StringTypeSpec extends ObjectBehavior
 {
     public function it_can_apply_a_callable()
     {
-        $callable = function ($value) {
+        $callable = static function ($value) {
             return $value;
         };
 
