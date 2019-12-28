@@ -17,6 +17,7 @@
     "require": {
         "php": ">= 7.1.3",
         "ext-json": "*",
+        "friends-of-phpspec/phpspec-requires": "^1.1",
         "jeremeamia/superclosure": "^2"
     },
     "require-dev": {

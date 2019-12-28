@@ -26,10 +26,10 @@ class ArrayType extends TypeValue
      */
     public function hash(): string
     {
-        if ($string = json_encode($this->value())) {
-            return $this->doHash($string);
+        if (false === $string = json_encode($this->value())) {
+            throw new Exception('Unable to encode the value.');
         }
 
-        throw new Exception('Unable to encode the value.');
+        return $this->doHash($string);
     }
 }
