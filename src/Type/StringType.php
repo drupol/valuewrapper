@@ -26,7 +26,9 @@ class StringType extends TypeValue implements Stringable
      */
     public function __toArray(): array
     {
-        return str_split($this->value());
+        return (false === $split = str_split($this->value())) ?
+            [] :
+            $split;
     }
 
     /**

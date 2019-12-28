@@ -1,0 +1,8 @@
+parameters:
+    ignoreErrors:
+        -
+            message: '#Method drupol\\valuewrapper\\Type\\StringType::__toArray\(\) should return array but returns array<int, string>|false.#'
+            path: %currentWorkingDirectory%/src/Type/StringType.php
+        -
+            message: '#Strict comparison using === between false and array<int, string> will always evaluate to false.#'
+            path: %currentWorkingDirectory%/src/Type/StringType.php
